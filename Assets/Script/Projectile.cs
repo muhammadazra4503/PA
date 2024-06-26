@@ -24,6 +24,7 @@ public class Projectile : MonoBehaviour
         gameObject.SetActive(true);
         GetComponent<BoxCollider>().enabled = true;
 
+        // Adjust the scale based on the direction
         float localScaleX = transform.localScale.x;
         if (Mathf.Sign(localScaleX) != _direction)
         {
@@ -31,6 +32,7 @@ public class Projectile : MonoBehaviour
         }
         transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
 
+        // Set the initial velocity
         _rigidbody.velocity = new Vector3(_direction * speed, 0, 0);
 
         Debug.Log("Direction set to: " + _direction);
@@ -54,18 +56,32 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy") || other.CompareTag("Obstacle"))
+        if (other.CompareTag("Enemy"))
         {
             _hit = true;
             GetComponent<BoxCollider>().enabled = false;
             Debug.Log("Projectile hit: " + other.gameObject.name);
-            OnHit(); // Handle hit logic here
+
+            EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
+            if (enemyHealth != null)
+            {
+                enemyHealth.TakeDamage(1); // Assuming 1 damage per hit
+                StartCoroutine(DisableProjectile());
+            }
         }
     }
 
     public void OnHit()
     {
         _hit = true;
+        GetComponent<BoxCollider>().enabled = false;
+        gameObject.SetActive(false);
+        Debug.Log("Projectile hit.");
+    }
+
+    private IEnumerator DisableProjectile()
+    {
+        yield return new WaitForSeconds(0.1f);
         gameObject.SetActive(false);
     }
 }
