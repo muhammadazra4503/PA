@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - HealthPickup
+  - Arrow
   layers:
   - Default
   - TransparentFX
@@ -13,10 +14,10 @@ TagManager:
   - Player
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - Wall
+  - Ground
+  - Arrow
   - 
   - 
   - 
@@ -42,4 +43,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 353839373
+    locked: 0
+  - name: Background
+    uniqueID: 1257885571
+    locked: 0
+  - name: Player
+    uniqueID: 4015036713
     locked: 0

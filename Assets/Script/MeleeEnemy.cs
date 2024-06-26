@@ -4,63 +4,37 @@ using UnityEngine;
 
 public class MeleeEnemy : MonoBehaviour
 {
-    [SerializeField] private float attackCooldown;
-    [SerializeField] private int damage;
-    [SerializeField] private float range;
-    [SerializeField] private BoxCollider boxCollider; // Use BoxCollider for 3D
-    [SerializeField] private float colliderDistance;
-    private float cooldownTimer = Mathf.Infinity;
-
-    private Animator anim;
-    private Transform player;
+    private Animator _animator;
+    private bool _isPlayerInside;
+    private Health _playerHealth;
+    private EnemyPatrol _enemyPatrol;
 
     private void Awake()
     {
-        anim = GetComponent<Animator>();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        cooldownTimer += Time.deltaTime;
-
-        if (PlayerInSight() && cooldownTimer >= attackCooldown)
-        {
-            cooldownTimer = 0;
-            anim.SetTrigger("meleeAttack");
-        }
-    }
-
-    private bool PlayerInSight()
-    {
-        if (player == null) return false;
-
-        Vector3 boxColliderCenter = boxCollider.bounds.center;
-        Vector3 boxColliderSize = boxCollider.bounds.size;
-        Vector3 direction = transform.right * range * transform.localScale.x * colliderDistance;
-
-        RaycastHit hit;
-        bool isHit = Physics.BoxCast(boxColliderCenter + direction,
-                                     boxColliderSize / 2,
-                                     Vector3.left,
-                                     out hit,
-                                     Quaternion.identity,
-                                     0);
-
-        return isHit && hit.collider.CompareTag("Player");
+        _animator = GetComponent<Animator>();
+        _enemyPatrol = GetComponentInParent<EnemyPatrol>();  // Assuming MeleeEnemy is a child of the patrolling enemy
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            player = other.transform;
+            _isPlayerInside = true;
+            _playerHealth = other.GetComponent<Health>();
+            if (_enemyPatrol != null)
+            {
+                _enemyPatrol.PausePatrol(); // Stop patrolling
+            }
+            _animator.SetTrigger("meleeAttack");
+            Debug.Log("Player entered enemy collider. Triggering melee attack.");
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            _animator.SetTrigger("meleeAttack");
         }
     }
 
@@ -68,17 +42,24 @@ public class MeleeEnemy : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            player = null;
+            _isPlayerInside = false;
+            _animator.SetTrigger("idle");
+            Debug.Log("Player exited enemy collider. Returning to idle.");
+            _playerHealth = null;
+            if (_enemyPatrol != null)
+            {
+                _enemyPatrol.ResumePatrol(); // Resume patrolling
+            }
         }
     }
 
-    private void OnDrawGizmos()
+    // Function to be called by the Animation Event
+    public void OnMeleeAttack()
     {
-        Gizmos.color = Color.red;
-        Vector3 boxColliderCenter = boxCollider.bounds.center;
-        Vector3 boxColliderSize = boxCollider.bounds.size;
-        Vector3 direction = transform.right * range * transform.localScale.x * colliderDistance;
-
-        Gizmos.DrawWireCube(boxColliderCenter + direction, boxColliderSize);
+        Debug.Log("Melee attack Animation Event triggered.");
+        if (_isPlayerInside && _playerHealth != null)
+        {
+            _playerHealth.TakeDamage(1); // Assuming 1 damage per attack
+        }
     }
 }
