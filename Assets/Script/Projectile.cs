@@ -67,7 +67,7 @@ public class Projectile : MonoBehaviour
             if (enemyHealth != null)
             {
                 enemyHealth.TakeDamage(1); // Assuming 1 damage per hit
-                StartCoroutine(DisableProjectile());
+                ProjectileManager.Instance.DisableProjectile(gameObject, 0.1f);
             }
         }
     }
@@ -83,11 +83,5 @@ public class Projectile : MonoBehaviour
     internal void SetTarget(GameObject gameObject)
     {
         throw new NotImplementedException();
-    }
-
-    private IEnumerator DisableProjectile()
-    {
-        yield return new WaitForSeconds(0.1f);
-        gameObject.SetActive(false);
     }
 }
