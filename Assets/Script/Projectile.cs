@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -77,6 +78,11 @@ public class Projectile : MonoBehaviour
         GetComponent<BoxCollider>().enabled = false;
         gameObject.SetActive(false);
         Debug.Log("Projectile hit.");
+    }
+
+    internal void SetTarget(GameObject gameObject)
+    {
+        throw new NotImplementedException();
     }
 
     private IEnumerator DisableProjectile()
