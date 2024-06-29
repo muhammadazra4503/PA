@@ -8,6 +8,7 @@ namespace Assets.PixelFantasy.PixelHeroes.Common.Scripts.ExampleScripts
 {
     public class CharacterControls : MonoBehaviour
     {
+        [SerializeField] private Transform spawnPoint;
         [SerializeField] private Transform projectileSpawnPoint;
         [SerializeField] private float attackCooldown = 1f;
         private float lastAttackTime;
@@ -40,6 +41,7 @@ namespace Assets.PixelFantasy.PixelHeroes.Common.Scripts.ExampleScripts
         private void Start()
         {
             Character.SetState(AnimationState.Idle);
+            Respawn();
         }
 
         private void Update()
@@ -307,6 +309,18 @@ namespace Assets.PixelFantasy.PixelHeroes.Common.Scripts.ExampleScripts
             projectile.transform.position = projectileSpawnPoint.position;
             float direction = Character.transform.localScale.x > 0 ? 1 : -1;
             projectile.GetComponent<Projectile>().SetDirection(direction);
+        }
+
+        public void Respawn()
+        {
+            transform.position = spawnPoint.position;
+            Character.SetState(AnimationState.Ready);
+            Character.Animator.SetTrigger("Idle");
+            var health = GetComponent<Health>();
+            if (health != null)
+            {
+                health.ResetHealth();
+            }
         }
     }
 }

@@ -120,6 +120,31 @@ public class Health : MonoBehaviour
         }
 
         Debug.Log("Player is dead.");
+
+        // Call Respawn after a delay to simulate a death animation or delay
+        Invoke("Respawn", 2f);  // Adjust the delay as needed
+    }
+
+    private void Respawn()
+    {
+        if (characterControls != null)
+        {
+            characterControls.Respawn();
+            isDead = false;
+            characterControls.enabled = true;
+        }
+    }
+
+    public void ResetHealth()
+    {
+        CurrentHealth = startingHealth;
+        UpdateHealthUI();
+        isDead = false;
+        isInvincible = false;
+        if (headSpriteRenderer != null)
+        {
+            headSpriteRenderer.color = originalColor;
+        }
     }
 
     private void UpdateHealthUI()
