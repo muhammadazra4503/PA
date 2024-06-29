@@ -9,13 +9,31 @@ public class MeleeEnemy : MonoBehaviour
     private Health _playerHealth;
     private EnemyPatrol _enemyPatrol;
 
+    [SerializeField] private GameObject attackTrigger; // Assign the trigger GameObject in the inspector
+
     private void Awake()
     {
         _animator = GetComponent<Animator>();
         _enemyPatrol = GetComponentInParent<EnemyPatrol>();  // Assuming MeleeEnemy is a child of the patrolling enemy
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnEnable()
+    {
+        // Subscribe to the trigger's events
+        attackTrigger.GetComponent<AttackTrigger>().OnPlayerEnter += HandlePlayerEnter;
+        attackTrigger.GetComponent<AttackTrigger>().OnPlayerStay += HandlePlayerStay;
+        attackTrigger.GetComponent<AttackTrigger>().OnPlayerExit += HandlePlayerExit;
+    }
+
+    private void OnDisable()
+    {
+        // Unsubscribe from the trigger's events
+        attackTrigger.GetComponent<AttackTrigger>().OnPlayerEnter -= HandlePlayerEnter;
+        attackTrigger.GetComponent<AttackTrigger>().OnPlayerStay -= HandlePlayerStay;
+        attackTrigger.GetComponent<AttackTrigger>().OnPlayerExit -= HandlePlayerExit;
+    }
+
+    private void HandlePlayerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -26,11 +44,11 @@ public class MeleeEnemy : MonoBehaviour
                 _enemyPatrol.PausePatrol(); // Stop patrolling
             }
             _animator.SetTrigger("meleeAttack");
-            Debug.Log("Player entered enemy collider. Triggering melee attack.");
+            Debug.Log("Player entered enemy attack trigger. Triggering melee attack.");
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void HandlePlayerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -38,13 +56,13 @@ public class MeleeEnemy : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void HandlePlayerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             _isPlayerInside = false;
             _animator.SetTrigger("idle");
-            Debug.Log("Player exited enemy collider. Returning to idle.");
+            Debug.Log("Player exited enemy attack trigger. Returning to idle.");
             _playerHealth = null;
             if (_enemyPatrol != null)
             {
