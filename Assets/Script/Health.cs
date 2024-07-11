@@ -22,6 +22,8 @@ public class Health : MonoBehaviour
     private Color originalColor;
     [SerializeField] private SpriteRenderer headSpriteRenderer;
 
+    private UIManager uiManager;
+
     private void Awake()
     {
         CurrentHealth = startingHealth;

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Assets.PixelFantasy.PixelHeroes.Common.Scripts.CharacterScripts;
 using AnimationState = Assets.PixelFantasy.PixelHeroes.Common.Scripts.CharacterScripts.AnimationState;
+using UnityEngine.UI;
+using TMPro;
 
 namespace Assets.PixelFantasy.PixelHeroes.Common.Scripts.ExampleScripts
 {
@@ -32,16 +34,27 @@ namespace Assets.PixelFantasy.PixelHeroes.Common.Scripts.ExampleScripts
         private bool _isCrawling = false;
         private bool _isStickingToWall = false;
 
+        // New variables for respawn limit and UI
+        [SerializeField] private int maxRespawns = 3;
+        private int remainingRespawns;
+        [SerializeField] private TMP_Text respawnText;
+
         public LayerMask WallLayer;
         public ProjectilePool projectilePool;  // Reference to the Projectile Pool
 
         private int _wallStickCount = 0;
         private const int _maxWallSticks = 2;
 
+        private UIManager uiManager;
+
         private void Start()
         {
             Character.SetState(AnimationState.Idle);
-            Respawn();
+            remainingRespawns = maxRespawns;
+            UpdateRespawnText();
+            InitialRespawn();
+
+            uiManager = FindObjectOfType<UIManager>();
         }
 
         private void Update()
@@ -313,6 +326,36 @@ namespace Assets.PixelFantasy.PixelHeroes.Common.Scripts.ExampleScripts
 
         public void Respawn()
         {
+            if (remainingRespawns > 0)
+            {
+                remainingRespawns--;
+                UpdateRespawnText();
+                if (remainingRespawns == 0)
+                {
+                    // No more respawns left
+                    Debug.Log("No more respawns left.");
+                    if (uiManager != null)
+                    {
+                        uiManager.GameOver();
+                    }
+                }
+                else
+                {
+                    // Respawn the character
+                    transform.position = spawnPoint.position;
+                    Character.SetState(AnimationState.Ready);
+                    Character.Animator.SetTrigger("Idle");
+                    var health = GetComponent<Health>();
+                    if (health != null)
+                    {
+                        health.ResetHealth();
+                    }
+                }
+            }
+        }
+
+        private void InitialRespawn()
+        {
             transform.position = spawnPoint.position;
             Character.SetState(AnimationState.Ready);
             Character.Animator.SetTrigger("Idle");
@@ -320,6 +363,14 @@ namespace Assets.PixelFantasy.PixelHeroes.Common.Scripts.ExampleScripts
             if (health != null)
             {
                 health.ResetHealth();
+            }
+        }
+
+        private void UpdateRespawnText()
+        {
+            if (respawnText != null)
+            {
+                respawnText.text = "Lives: " + remainingRespawns;
             }
         }
     }
