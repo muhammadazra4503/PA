@@ -54,3 +54,9 @@ TagManager:
   - name: Player
     uniqueID: 4015036713
     locked: 0
+  - name: Wall
+    uniqueID: 711240641
+    locked: 0
+  - name: Arrow
+    uniqueID: 1623578307
+    locked: 0
