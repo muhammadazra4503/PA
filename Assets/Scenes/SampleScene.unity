@@ -6199,6 +6199,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1584879041176490343, guid: 88fcc35800068014bbb5bef4b9dd785f, type: 3}
+      propertyPath: leftEdge
+      value: 
+      objectReference: {fileID: 375063815385097770}
+    - target: {fileID: 1584879041176490343, guid: 88fcc35800068014bbb5bef4b9dd785f, type: 3}
+      propertyPath: rightEdge
+      value: 
+      objectReference: {fileID: 375063815385097770}
     - target: {fileID: 2603852568764877796, guid: 88fcc35800068014bbb5bef4b9dd785f, type: 3}
       propertyPath: m_Name
       value: EnemyMeleePatrol
@@ -6447,7 +6455,8 @@ PrefabInstance:
       propertyPath: healthBars.Array.data[2]
       value: 
       objectReference: {fileID: 1297639339}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5152383861478990986, guid: 09f2efd0fd009dc43804c5ada47b69fc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
