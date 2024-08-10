@@ -39,6 +39,10 @@ namespace Assets.PixelFantasy.PixelHeroes.Common.Scripts.ExampleScripts
         private int remainingRespawns;
         [SerializeField] private TMP_Text respawnText;
 
+        // New variables for cooldown indicator
+        [SerializeField] private Image cooldownImage;
+        [SerializeField] private TMP_Text cooldownText;
+
         public LayerMask WallLayer;
         public ProjectilePool projectilePool;  // Reference to the Projectile Pool
 
@@ -55,11 +59,24 @@ namespace Assets.PixelFantasy.PixelHeroes.Common.Scripts.ExampleScripts
             InitialRespawn();
 
             uiManager = FindObjectOfType<UIManager>();
+
+            lastAttackTime = -attackCooldown;
+
+            if (cooldownImage != null)
+            {
+                cooldownImage.fillAmount = 0;
+            }
+
+            if (cooldownText != null)
+            {
+                cooldownText.gameObject.SetActive(false); 
+            }
         }
 
         private void Update()
         {
             HandleInput();
+            UpdateCooldownIndicator();
         }
 
         private void HandleInput()
@@ -315,6 +332,26 @@ namespace Assets.PixelFantasy.PixelHeroes.Common.Scripts.ExampleScripts
             _isStickingToWall = false;
             Character.SetState(AnimationState.Ready);
         }
+        private void UpdateCooldownIndicator()
+        {
+            if (cooldownImage != null && cooldownText != null)
+            {
+                float cooldownRemaining = Mathf.Max(0, lastAttackTime + attackCooldown - Time.time);
+                float cooldownFraction = cooldownRemaining / attackCooldown;
+
+                cooldownImage.fillAmount = cooldownFraction;
+
+                if (cooldownRemaining > 0)
+                {
+                    cooldownText.gameObject.SetActive(true); // Show text if cooldown is active
+                    cooldownText.text = Mathf.Ceil(cooldownRemaining).ToString();
+                }
+                else
+                {
+                    cooldownText.gameObject.SetActive(false); // Hide text when cooldown is done
+                }
+            }
+        }
 
         private void ShootProjectile()
         {
@@ -370,7 +407,7 @@ namespace Assets.PixelFantasy.PixelHeroes.Common.Scripts.ExampleScripts
         {
             if (respawnText != null)
             {
-                respawnText.text = "Lives: " + remainingRespawns;
+                respawnText.text = "" + remainingRespawns;
             }
         }
     }
