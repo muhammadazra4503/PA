@@ -41,23 +41,26 @@ public class EnemyProjectile : EnemyDamage
         return screenPosition.x < 0 || screenPosition.x > 1 || screenPosition.y < 0 || screenPosition.y > 1;
     }
 
-    private void OnTriggerEnter(Collider collision)
+   private void OnTriggerEnter(Collider collision)
+{
+    if (collision.CompareTag("Player"))
     {
-        Debug.Log("Collided with: " + collision.gameObject.name);
-        if (collision.CompareTag("Player"))
+        Health playerHealth = collision.GetComponentInParent<Health>();
+        if (playerHealth != null)
         {
-            Health playerHealth = collision.GetComponentInParent<Health>();
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(damage);
-            }
-            else
-            {
-                Debug.LogError("Health component not found on player or its parent: " + collision.gameObject.name);
-            }
+            playerHealth.TakeDamage(damage);
+        }
+        else
+        {
+            Debug.LogError("Health component not found on player or its parent: " + collision.gameObject.name);
         }
 
-        // Deactivate the projectile upon collision
+        // Deactivate the projectile upon collision with the player
         gameObject.SetActive(false);
     }
+    else
+    {
+        // Do nothing for other collisions to allow the projectile to pass through
+    }
+}
 }
