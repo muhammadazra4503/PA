@@ -60,3 +60,6 @@ TagManager:
   - name: Arrow
     uniqueID: 1623578307
     locked: 0
+  - name: Buff
+    uniqueID: 1762715685
+    locked: 0
