@@ -1,5 +1,5 @@
 using UnityEngine;
-using TMPro; // Menggunakan TextMesh Pro
+using TMPro;
 using System.Collections.Generic;
 
 public class MonsterSpawner : MonoBehaviour
@@ -7,7 +7,7 @@ public class MonsterSpawner : MonoBehaviour
     [System.Serializable]
     public class SpawnPoint
     {
-        public Transform[] spawnTransforms; // Array titik spawn
+        public Transform[] spawnTransforms;
         public GameObject monsterPrefab;
     }
 
@@ -17,7 +17,7 @@ public class MonsterSpawner : MonoBehaviour
     [SerializeField] private float spawnDuration = 30.0f;
     [SerializeField] private float destroyCooldown = 5.0f;
     [SerializeField] private GameObject objectToActivate;
-    [SerializeField] private TextMeshProUGUI cooldownText; // Menggunakan TextMeshProUGUI
+    [SerializeField] private TextMeshProUGUI cooldownText;
 
     private bool isSpawning = false;
     private bool isCooldown = false;
@@ -37,7 +37,7 @@ public class MonsterSpawner : MonoBehaviour
 
             if (!isCooldown)
             {
-                StartCooldown(); // Mulai cooldown segera setelah pemain masuk collider
+                StartCooldown();
             }
         }
     }
@@ -72,7 +72,6 @@ public class MonsterSpawner : MonoBehaviour
         {
             cooldownTimer -= Time.deltaTime;
 
-            // Update UI Text dengan angka waktu cooldown yang tersisa
             if (cooldownText != null)
             {
                 cooldownText.text = Mathf.Ceil(cooldownTimer).ToString();
@@ -84,7 +83,6 @@ public class MonsterSpawner : MonoBehaviour
                 isCooldown = false;
                 ActivateObject();
 
-                // Kosongkan teks cooldown setelah cooldown berakhir
                 if (cooldownText != null)
                 {
                     cooldownText.text = "";
@@ -99,11 +97,18 @@ public class MonsterSpawner : MonoBehaviour
         {
             if (spawnPoint.spawnTransforms.Length > 0)
             {
-                // Pilih salah satu titik spawn secara acak
                 int randomIndex = Random.Range(0, spawnPoint.spawnTransforms.Length);
                 Transform chosenTransform = spawnPoint.spawnTransforms[randomIndex];
 
                 GameObject spawnedMonster = Instantiate(spawnPoint.monsterPrefab, chosenTransform.position, chosenTransform.rotation);
+
+                // Enable movement on the spawned monster
+                EnemyPatrol enemyPatrol = spawnedMonster.GetComponent<EnemyPatrol>();
+                if (enemyPatrol != null)
+                {
+                    enemyPatrol.canMove = true;
+                }
+
                 spawnedMonsters.Add(spawnedMonster);
             }
         }

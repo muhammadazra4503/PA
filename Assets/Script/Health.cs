@@ -23,6 +23,9 @@ public class Health : MonoBehaviour
     [SerializeField] private SpriteRenderer headSpriteRenderer;
 
     private UIManager uiManager;
+    
+    private bool isShieldActive = false; // Menyimpan status shield
+    private Color shieldColor = Color.blue; // Warna saat shield aktif
 
     private void Awake()
     {
@@ -64,19 +67,9 @@ public class Health : MonoBehaviour
 
     private IEnumerator InvincibilityCoroutine()
     {
-        isInvincible = true;
-        if (headSpriteRenderer != null)
-        {
-            headSpriteRenderer.color = invincibilityColor;
-        }
-
+        SetInvincibility(true);
         yield return new WaitForSeconds(invincibilityDuration);
-
-        isInvincible = false;
-        if (headSpriteRenderer != null)
-        {
-            headSpriteRenderer.color = originalColor;
-        }
+        SetInvincibility(false);
     }
 
     private void ApplyKnockback()
@@ -143,6 +136,7 @@ public class Health : MonoBehaviour
         UpdateHealthUI();
         isDead = false;
         isInvincible = false;
+        isShieldActive = false; // Reset shield status
         if (headSpriteRenderer != null)
         {
             headSpriteRenderer.color = originalColor;
@@ -160,5 +154,36 @@ public class Health : MonoBehaviour
     private void Update()
     {
         // Other update logic if needed
+    }
+
+    public void SetInvincibility(bool state)
+    {
+        isInvincible = state;
+        UpdateSpriteColor();
+    }
+
+    public void ActivateShield(bool state)
+    {
+        isShieldActive = state;
+        UpdateSpriteColor();
+    }
+
+    private void UpdateSpriteColor()
+    {
+        if (headSpriteRenderer != null)
+        {
+            if (isShieldActive)
+            {
+                headSpriteRenderer.color = shieldColor; // Warna biru jika shield aktif
+            }
+            else if (isInvincible)
+            {
+                headSpriteRenderer.color = invincibilityColor; // Warna merah jika invincible aktif
+            }
+            else
+            {
+                headSpriteRenderer.color = originalColor; // Warna asli jika tidak ada shield atau invincibility
+            }
+        }
     }
 }

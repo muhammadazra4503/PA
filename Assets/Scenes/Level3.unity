@@ -11133,7 +11133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5463603204497401252, guid: 09f2efd0fd009dc43804c5ada47b69fc, type: 3}
       propertyPath: RunSpeed
-      value: 6.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5463603204497401252, guid: 09f2efd0fd009dc43804c5ada47b69fc, type: 3}
       propertyPath: JumpSpeed
@@ -11169,7 +11169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6110451092157067914, guid: 09f2efd0fd009dc43804c5ada47b69fc, type: 3}
       propertyPath: invincibilityDuration
-      value: 1.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6110451092157067914, guid: 09f2efd0fd009dc43804c5ada47b69fc, type: 3}
       propertyPath: healthBars.Array.data[0]
