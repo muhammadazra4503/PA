@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro; // Menggunakan TextMesh Pro
 using System.Collections.Generic;
 
 public class MonsterSpawner : MonoBehaviour
@@ -6,29 +7,38 @@ public class MonsterSpawner : MonoBehaviour
     [System.Serializable]
     public class SpawnPoint
     {
-        public Transform spawnTransform; // Titik spawn
-        public GameObject monsterPrefab; // Prefab monster yang akan di-spawn di titik spawn ini
+        public Transform[] spawnTransforms; // Array titik spawn
+        public GameObject monsterPrefab;
     }
 
     [Header("Spawner Settings")]
-    [SerializeField] private SpawnPoint[] spawnPoints; // Array titik spawn dan prefab
-    [SerializeField] private float spawnInterval = 5.0f; // Interval waktu antara spawn monster
-    [SerializeField] private float spawnDuration = 30.0f; // Durasi total spawn monster
-    [SerializeField] private float destroyCooldown = 5.0f; // Waktu cooldown sebelum monster dihancurkan
-    [SerializeField] private GameObject objectToActivate; // Game object yang akan diaktifkan
+    [SerializeField] private SpawnPoint[] spawnPoints;
+    [SerializeField] private float spawnInterval = 5.0f;
+    [SerializeField] private float spawnDuration = 30.0f;
+    [SerializeField] private float destroyCooldown = 5.0f;
+    [SerializeField] private GameObject objectToActivate;
+    [SerializeField] private TextMeshProUGUI cooldownText; // Menggunakan TextMeshProUGUI
 
-    private bool isSpawning = false; // Apakah sistem sedang melakukan spawn
-    private bool isCooldown = false; // Apakah dalam mode cooldown
-    private float spawnTimer; // Timer untuk interval spawn
-    private float durationTimer; // Timer untuk durasi total spawn
-    private float cooldownTimer; // Timer untuk cooldown sebelum destroy
-    private List<GameObject> spawnedMonsters = new List<GameObject>(); // Daftar monster yang telah di-spawn
+    private bool isSpawning = false;
+    private bool isCooldown = false;
+    private float spawnTimer;
+    private float durationTimer;
+    private float cooldownTimer;
+    private List<GameObject> spawnedMonsters = new List<GameObject>();
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !isSpawning)
+        if (other.CompareTag("Player"))
         {
-            StartSpawning(); // Mulai spawn monster ketika pemain masuk trigger
+            if (!isSpawning)
+            {
+                StartSpawning();
+            }
+
+            if (!isCooldown)
+            {
+                StartCooldown(); // Mulai cooldown segera setelah pemain masuk collider
+            }
         }
     }
 
@@ -48,14 +58,13 @@ public class MonsterSpawner : MonoBehaviour
 
             if (spawnTimer <= 0)
             {
-                SpawnMonsters(); // Spawn monster setiap interval waktu tertentu
+                SpawnMonsters();
                 spawnTimer = spawnInterval;
             }
 
             if (durationTimer <= 0 && !isCooldown)
             {
                 isSpawning = false;
-                StartCooldown(); // Mulai cooldown ketika durasi total habis
             }
         }
 
@@ -63,11 +72,23 @@ public class MonsterSpawner : MonoBehaviour
         {
             cooldownTimer -= Time.deltaTime;
 
+            // Update UI Text dengan angka waktu cooldown yang tersisa
+            if (cooldownText != null)
+            {
+                cooldownText.text = Mathf.Ceil(cooldownTimer).ToString();
+            }
+
             if (cooldownTimer <= 0)
             {
-                DestroyAllSpawnedMonsters(); // Hancurkan semua monster setelah cooldown
+                DestroyAllSpawnedMonsters();
                 isCooldown = false;
-                ActivateObject(); // Aktifkan game object setelah semua monster dihancurkan
+                ActivateObject();
+
+                // Kosongkan teks cooldown setelah cooldown berakhir
+                if (cooldownText != null)
+                {
+                    cooldownText.text = "";
+                }
             }
         }
     }
@@ -76,8 +97,15 @@ public class MonsterSpawner : MonoBehaviour
     {
         foreach (SpawnPoint spawnPoint in spawnPoints)
         {
-            GameObject spawnedMonster = Instantiate(spawnPoint.monsterPrefab, spawnPoint.spawnTransform.position, spawnPoint.spawnTransform.rotation);
-            spawnedMonsters.Add(spawnedMonster);
+            if (spawnPoint.spawnTransforms.Length > 0)
+            {
+                // Pilih salah satu titik spawn secara acak
+                int randomIndex = Random.Range(0, spawnPoint.spawnTransforms.Length);
+                Transform chosenTransform = spawnPoint.spawnTransforms[randomIndex];
+
+                GameObject spawnedMonster = Instantiate(spawnPoint.monsterPrefab, chosenTransform.position, chosenTransform.rotation);
+                spawnedMonsters.Add(spawnedMonster);
+            }
         }
     }
 
@@ -93,17 +121,17 @@ public class MonsterSpawner : MonoBehaviour
         {
             if (monster != null)
             {
-                Destroy(monster); // Hancurkan monster yang masih ada
+                Destroy(monster);
             }
         }
-        spawnedMonsters.Clear(); // Kosongkan daftar monster yang telah di-spawn
+        spawnedMonsters.Clear();
     }
 
     private void ActivateObject()
     {
         if (objectToActivate != null)
         {
-            objectToActivate.SetActive(true); // Aktifkan game object
+            objectToActivate.SetActive(true);
         }
     }
 }
