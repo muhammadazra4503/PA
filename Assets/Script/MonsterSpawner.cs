@@ -16,7 +16,7 @@ public class MonsterSpawner : MonoBehaviour
     [SerializeField] private float spawnInterval = 5.0f;
     [SerializeField] private float spawnDuration = 30.0f;
     [SerializeField] private float destroyCooldown = 5.0f;
-    [SerializeField] private GameObject objectToActivate;
+    [SerializeField] private List<GameObject> objectsToActivate; // Changed to a list
     [SerializeField] private TextMeshProUGUI cooldownText;
 
     private bool isSpawning = false;
@@ -81,7 +81,7 @@ public class MonsterSpawner : MonoBehaviour
             {
                 DestroyAllSpawnedMonsters();
                 isCooldown = false;
-                ActivateObject();
+                ActivateObjects(); // Modified to call the new method
 
                 if (cooldownText != null)
                 {
@@ -132,11 +132,14 @@ public class MonsterSpawner : MonoBehaviour
         spawnedMonsters.Clear();
     }
 
-    private void ActivateObject()
+    private void ActivateObjects() // Renamed and modified this method
     {
-        if (objectToActivate != null)
+        foreach (GameObject obj in objectsToActivate)
         {
-            objectToActivate.SetActive(true);
+            if (obj != null)
+            {
+                obj.SetActive(true);
+            }
         }
     }
 }
