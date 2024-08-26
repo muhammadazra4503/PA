@@ -13,7 +13,7 @@ namespace Assets.PixelFantasy.PixelHeroes.Common.Scripts.CharacterScripts
         
         public void SetState(AnimationState state)
         {
-            foreach (var variable in new[] { "Idle", "Ready", "Walking", "Running", "Crawling", "Jumping", "Climbing", "Blocking", "Dead" })
+            foreach (var variable in new[] { "Idle", "Ready", "Walking", "Running","Jumping", "Climbing", "Blocking", "Dead" })
             {
                 Animator.SetBool(variable, false);
             }
