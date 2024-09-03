@@ -23,8 +23,14 @@ public class EnemyPatrol : MonoBehaviour
     [Header("Enemy Animator")]
     [SerializeField] private Animator anim;
 
+    [Header("Player")]
+    [SerializeField] private Transform player;
+
     private bool isMoving;
     private bool isPaused;
+
+    // New property to control movement
+    public bool canMove = false;
 
     private void Awake()
     {
@@ -36,7 +42,7 @@ public class EnemyPatrol : MonoBehaviour
 
     private void Update()
     {
-        if (enemy == null) return;  // Add this line to prevent null reference
+        if (enemy == null || !canMove) return;
         if (isPaused) return;
 
         if (movingLeft)
@@ -53,6 +59,8 @@ public class EnemyPatrol : MonoBehaviour
             else        
                 DirectionChange();
         }
+
+        FollowPlayerVertically();
     }
 
     private void DirectionChange()
@@ -74,6 +82,12 @@ public class EnemyPatrol : MonoBehaviour
         
         enemy.position = new Vector3(enemy.position.x + Time.deltaTime * _direction * speed, 
         enemy.position.y, enemy.position.z);
+    }
+
+    private void FollowPlayerVertically()
+    {
+        if (player == null) return;
+        enemy.position = new Vector3(enemy.position.x, player.position.y, enemy.position.z);
     }
 
     public bool IsMoving()

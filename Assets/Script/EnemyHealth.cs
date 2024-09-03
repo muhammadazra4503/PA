@@ -19,6 +19,7 @@ public class EnemyHealth : MonoBehaviour
         CurrentHealth = startingHealth;
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+
         if (spriteRenderer != null)
         {
             originalColor = spriteRenderer.color;
