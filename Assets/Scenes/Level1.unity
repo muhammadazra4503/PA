@@ -10972,7 +10972,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2858191179184094746, guid: 09f2efd0fd009dc43804c5ada47b69fc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.53
+      value: -4.41
       objectReference: {fileID: 0}
     - target: {fileID: 2858191179184094746, guid: 09f2efd0fd009dc43804c5ada47b69fc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -46142,6 +46142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Level2
+  currentLevelIndex: 1
 --- !u!1 &1265140145
 GameObject:
   m_ObjectHideFlags: 0
@@ -76401,7 +76402,7 @@ Transform:
   m_GameObject: {fileID: 2050362326}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.720032, y: -11.1, z: -1.050668}
+  m_LocalPosition: {x: 12.36, y: -11.11, z: -1.050668}
   m_LocalScale: {x: 10.352, y: 10.352, z: 10.352}
   m_ConstrainProportionsScale: 0
   m_Children: []
