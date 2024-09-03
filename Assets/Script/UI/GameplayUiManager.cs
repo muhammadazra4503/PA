@@ -41,7 +41,7 @@ public class UIManager : MonoBehaviour
 
     public void MainMenu()
     {
-        Time.timeScale = 1f; // Resume the game
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu"); // Load the main menu scene
     }
 

@@ -52760,6 +52760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Level4-1
+  currentLevelIndex: 3
 --- !u!114 &1609829774
 MonoBehaviour:
   m_ObjectHideFlags: 0
