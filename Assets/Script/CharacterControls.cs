@@ -17,10 +17,9 @@ namespace Assets.PixelFantasy.PixelHeroes.Common.Scripts.ExampleScripts
 
         public Character Character;
         public CharacterController Controller;
-        public BoxCollider BoxCollider;  // Reference to BoxCollider
+        public BoxCollider BoxCollider;
         public float RunSpeed = 1f;
         public float JumpSpeed = 3f;
-        public float CrawlSpeed = 0.25f;
         public float WallJumpSpeed = 5f;
         public float Gravity = -0.2f;
         public ParticleSystem MoveDust;
@@ -31,25 +30,27 @@ namespace Assets.PixelFantasy.PixelHeroes.Common.Scripts.ExampleScripts
         private float _activityTime;
         private bool _isOnWall = false;
         private bool _isWallJumping = false;
-        private bool _isCrawling = false;
-        private bool _isStickingToWall = false;
 
-        // New variables for respawn limit and UI
         [SerializeField] private int maxRespawns = 3;
         private int remainingRespawns;
         [SerializeField] private TMP_Text respawnText;
 
-        // New variables for cooldown indicator
         [SerializeField] private Image cooldownImage;
         [SerializeField] private TMP_Text cooldownText;
 
         public LayerMask WallLayer;
-        public ProjectilePool projectilePool;  // Reference to the Projectile Pool
+        public ProjectilePool projectilePool;
 
         private int _wallStickCount = 0;
         private const int _maxWallSticks = 2;
 
         private UIManager uiManager;
+
+        // Reference to the virtual joystick
+        [SerializeField] private VariableJoystick joystick;
+
+        // Reference to the attack button
+        [SerializeField] private Button attackButton;
 
         private void Start()
         {
@@ -71,6 +72,12 @@ namespace Assets.PixelFantasy.PixelHeroes.Common.Scripts.ExampleScripts
             {
                 cooldownText.gameObject.SetActive(false); 
             }
+
+            // Attach the attack function to the button
+            if (attackButton != null)
+            {
+                attackButton.onClick.AddListener(Attack);
+            }
         }
 
         private void Update()
@@ -81,78 +88,23 @@ namespace Assets.PixelFantasy.PixelHeroes.Common.Scripts.ExampleScripts
 
         private void HandleInput()
         {
-            if (Input.GetKeyDown(KeyCode.A) && Time.time > lastAttackTime + attackCooldown)
+            // Joystick input for movement
+            _inputX = Mathf.RoundToInt(joystick.Horizontal);
+            _inputY = Mathf.RoundToInt(joystick.Vertical);
+
+            if (_inputY > 0 && Controller.isGrounded)
             {
-                lastAttackTime = Time.time;
-                Character.Animator.SetTrigger("Attack");
-                ShootProjectile();
+                JumpDust.Play(true);
             }
-
-            if (Input.GetKeyDown(KeyCode.J)) Character.Animator.SetTrigger("Jab");
-            else if (Input.GetKeyDown(KeyCode.P)) Character.Animator.SetTrigger("Push");
-            else if (Input.GetKeyDown(KeyCode.H)) Character.Animator.SetTrigger("Hit");
-            else if (Input.GetKeyDown(KeyCode.I)) { Character.SetState(AnimationState.Idle); _activityTime = 0; }
-            else if (Input.GetKeyDown(KeyCode.R)) { Character.SetState(AnimationState.Ready); _activityTime = Time.time; }
-            else if (Input.GetKeyDown(KeyCode.B)) Character.SetState(AnimationState.Blocking);
-            else if (Input.GetKeyUp(KeyCode.B)) Character.SetState(AnimationState.Ready);
-            else if (Input.GetKeyDown(KeyCode.D)) Character.SetState(AnimationState.Dead);
-            else if (Input.GetKeyDown(KeyCode.S)) Character.Animator.SetTrigger("Slash");
-            else if (Input.GetKeyDown(KeyCode.O)) Character.Animator.SetTrigger("Shot");
-            else if (Input.GetKeyDown(KeyCode.F)) Character.Animator.SetTrigger("Fire1H");
-            else if (Input.GetKeyDown(KeyCode.E)) Character.Animator.SetTrigger("Fire2H");
-            else if (Input.GetKeyDown(KeyCode.C)) Character.SetState(AnimationState.Climbing);
-            else if (Input.GetKeyUp(KeyCode.C)) Character.SetState(AnimationState.Ready);
-            else if (Input.GetKeyUp(KeyCode.L)) Character.Blink();
-
-            if (Controller.isGrounded)
+            else if (_inputY > 0 && _isOnWall)
             {
-                if (Input.GetKeyDown(KeyCode.DownArrow))
+                if (_inputX != 0)  // Only allow jumping to the side when on the wall
                 {
-                    GetDown();
+                    _isWallJumping = true;
+                    _motion = new Vector3(WallJumpSpeed * _inputX, JumpSpeed);
+                    _isOnWall = false;
+                    Character.SetState(AnimationState.Jumping);
                 }
-                else if (Input.GetKeyUp(KeyCode.DownArrow))
-                {
-                    GetUp();
-                }
-            }
-
-            if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                _inputX = -1;
-            }
-            else if (Input.GetKey(KeyCode.RightArrow))
-            {
-                _inputX = 1;
-            }
-
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                _inputY = 1;
-
-                if (Controller.isGrounded)
-                {
-                    JumpDust.Play(true);
-                }
-                else if (_isOnWall)
-                {
-                    if (_inputX != 0)  // Only allow jumping to the side when on the wall
-                    {
-                        _isWallJumping = true;
-                        _motion = new Vector3(WallJumpSpeed * _inputX, JumpSpeed);
-                        _isOnWall = false;
-                        Character.SetState(AnimationState.Jumping);
-                    }
-                }
-            }
-
-            if (Input.GetKey(KeyCode.Z) && _isOnWall && _wallStickCount < _maxWallSticks)
-            {
-                StartStickingToWall();
-            }
-
-            if (Input.GetKeyUp(KeyCode.Z))
-            {
-                StopStickingToWall();
             }
         }
 
@@ -187,25 +139,16 @@ namespace Assets.PixelFantasy.PixelHeroes.Common.Scripts.ExampleScripts
             {
                 _isOnWall = false;
                 _isWallJumping = false;
-                _wallStickCount = 0;  // Reset the wall stick count when grounded
+                _wallStickCount = 0;  
 
                 if (state == AnimationState.Jumping)
                 {
-                    if (Input.GetKey(KeyCode.DownArrow))
-                    {
-                        GetDown();
-                    }
-                    else
-                    {
-                        Character.Animator.SetTrigger("Landed");
-                        Character.SetState(AnimationState.Ready);
-                        JumpDust.Play(true);
-                    }
+                    Character.Animator.SetTrigger("Landed");
+                    Character.SetState(AnimationState.Ready);
+                    JumpDust.Play(true);
                 }
 
-                _motion = _isCrawling
-                    ? new Vector3(CrawlSpeed * _inputX, 0)
-                    : new Vector3(RunSpeed * _inputX, JumpSpeed * _inputY);
+                _motion = new Vector3(RunSpeed * _inputX, JumpSpeed * _inputY);
 
                 if (_inputX != 0 || _inputY != 0)
                 {
@@ -228,7 +171,6 @@ namespace Assets.PixelFantasy.PixelHeroes.Common.Scripts.ExampleScripts
                 {
                     switch (state)
                     {
-                        case AnimationState.Crawling:
                         case AnimationState.Climbing:
                         case AnimationState.Blocking:
                             break;
@@ -294,16 +236,6 @@ namespace Assets.PixelFantasy.PixelHeroes.Common.Scripts.ExampleScripts
             Character.transform.localScale = scale;
         }
 
-        private void GetDown()
-        {
-            Character.Animator.SetTrigger("GetDown");
-        }
-
-        private void GetUp()
-        {
-            Character.Animator.SetTrigger("GetUp");
-        }
-
         private void CheckForWall()
         {
             RaycastHit hit;
@@ -319,19 +251,6 @@ namespace Assets.PixelFantasy.PixelHeroes.Common.Scripts.ExampleScripts
             }
         }
 
-        private void StartStickingToWall()
-        {
-            _isStickingToWall = true;
-            _wallStickCount++;  // Increment the wall stick count
-            _motion = Vector3.zero;  // Stop the character's movement
-            Character.SetState(AnimationState.Climbing);  // Assuming climbing is the sticking state
-        }
-
-        private void StopStickingToWall()
-        {
-            _isStickingToWall = false;
-            Character.SetState(AnimationState.Ready);
-        }
         private void UpdateCooldownIndicator()
         {
             if (cooldownImage != null && cooldownText != null)
@@ -343,13 +262,24 @@ namespace Assets.PixelFantasy.PixelHeroes.Common.Scripts.ExampleScripts
 
                 if (cooldownRemaining > 0)
                 {
-                    cooldownText.gameObject.SetActive(true); // Show text if cooldown is active
+                    cooldownText.gameObject.SetActive(true); 
                     cooldownText.text = Mathf.Ceil(cooldownRemaining).ToString();
                 }
                 else
                 {
-                    cooldownText.gameObject.SetActive(false); // Hide text when cooldown is done
+                    cooldownText.gameObject.SetActive(false); 
                 }
+            }
+        }
+
+        // Method to trigger the attack when the button is pressed
+        private void Attack()
+        {
+            if (Time.time > lastAttackTime + attackCooldown)
+            {
+                lastAttackTime = Time.time;
+                Character.Animator.SetTrigger("Attack");
+                ShootProjectile();
             }
         }
 
