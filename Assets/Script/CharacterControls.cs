@@ -162,130 +162,138 @@ namespace Assets.PixelFantasy.PixelHeroes.Common.Scripts.ExampleScripts
         }
 
         private void Move()
+{
+    if (Time.frameCount <= 1)
+    {
+        Controller.Move(new Vector3(0, Gravity) * Time.fixedDeltaTime);
+        return;
+    }
+
+    var state = Character.GetState();
+
+    if (state == AnimationState.Dead)
+    {
+        if (_inputX == 0) return;
+
+        Character.SetState(AnimationState.Running);
+    }
+
+    if (_inputX != 0)
+    {
+        Turn(_inputX);
+        // Debug log for horizontal movement
+        Debug.Log($"Moving horizontally with speed: {_inputX * RunSpeed}");
+    }
+
+    if (Controller.isGrounded)
+    {
+        _isOnWall = false;
+        _isWallJumping = false;
+        _wallStickCount = 0;  // Reset the wall stick count when grounded
+
+        if (state == AnimationState.Jumping)
         {
-            if (Time.frameCount <= 1)
+            if (Input.GetKey(KeyCode.DownArrow))
             {
-                Controller.Move(new Vector3(0, Gravity) * Time.fixedDeltaTime);
-                return;
-            }
-
-            var state = Character.GetState();
-
-            if (state == AnimationState.Dead)
-            {
-                if (_inputX == 0) return;
-
-                Character.SetState(AnimationState.Running);
-            }
-
-            if (_inputX != 0)
-            {
-                Turn(_inputX);
-            }
-
-            if (Controller.isGrounded)
-            {
-                _isOnWall = false;
-                _isWallJumping = false;
-                _wallStickCount = 0;  // Reset the wall stick count when grounded
-
-                if (state == AnimationState.Jumping)
-                {
-                    if (Input.GetKey(KeyCode.DownArrow))
-                    {
-                        GetDown();
-                    }
-                    else
-                    {
-                        Character.Animator.SetTrigger("Landed");
-                        Character.SetState(AnimationState.Ready);
-                        JumpDust.Play(true);
-                    }
-                }
-
-                _motion = _isCrawling
-                    ? new Vector3(CrawlSpeed * _inputX, 0)
-                    : new Vector3(RunSpeed * _inputX, JumpSpeed * _inputY);
-
-                if (_inputX != 0 || _inputY != 0)
-                {
-                    if (_inputY > 0)
-                    {
-                        Character.SetState(AnimationState.Jumping);
-                    }
-                    else
-                    {
-                        switch (state)
-                        {
-                            case AnimationState.Idle:
-                            case AnimationState.Ready:
-                                Character.SetState(AnimationState.Running);
-                                break;
-                        }
-                    }
-                }
-                else
-                {
-                    switch (state)
-                    {
-                        case AnimationState.Crawling:
-                        case AnimationState.Climbing:
-                        case AnimationState.Blocking:
-                            break;
-                        default:
-                            var targetState = Time.time - _activityTime > 5 ? AnimationState.Idle : AnimationState.Ready;
-
-                            if (state != targetState)
-                            {
-                                Character.SetState(targetState);
-                            }
-
-                            break;
-                    }
-                }
+                GetDown();
             }
             else
             {
-                if (!_isWallJumping)
-                {
-                    CheckForWall();
-                }
-
-                _motion = new Vector3(RunSpeed * _inputX, _motion.y);
-                Character.SetState(AnimationState.Jumping);
-            }
-
-            _motion.y += Gravity;
-
-            Controller.Move(_motion * Time.fixedDeltaTime);
-
-            Character.Animator.SetBool("Grounded", Controller.isGrounded);
-            Character.Animator.SetBool("Moving", Controller.isGrounded && _inputX != 0);
-            Character.Animator.SetBool("Falling", !Controller.isGrounded && Controller.velocity.y < 0);
-
-            if (_inputX != 0 || _inputY != 0 || Character.Animator.GetBool("Action"))
-            {
-                _activityTime = Time.time;
-            }
-
-            _inputX = _inputY = 0;
-
-            if (Controller.isGrounded && !Mathf.Approximately(Controller.velocity.x, 0))
-            {
-                var velocity = MoveDust.velocityOverLifetime;
-
-                velocity.xMultiplier = 0.2f * -Mathf.Sign(Controller.velocity.x);
-
-                if (!MoveDust.isPlaying)
-                {
-                    MoveDust.Play();
-                }
-            }
-            else
-            {
-                MoveDust.Stop();
+                Character.Animator.SetTrigger("Landed");
+                Character.SetState(AnimationState.Ready);
+                JumpDust.Play(true);
             }
         }
+
+        _motion = _isCrawling
+            ? new Vector3(CrawlSpeed * _inputX, 0)
+            : new Vector3(RunSpeed * _inputX, JumpSpeed * _inputY);
+
+        if (_inputX != 0 || _inputY != 0)
+        {
+            if (_inputY > 0)
+            {
+                Character.SetState(AnimationState.Jumping);
+                // Debug log for jumping
+                Debug.Log($"Jumping with speed: {JumpSpeed}");
+            }
+            else
+            {
+                switch (state)
+                {
+                    case AnimationState.Idle:
+                    case AnimationState.Ready:
+                        Character.SetState(AnimationState.Running);
+                        break;
+                }
+            }
+        }
+        else
+        {
+            switch (state)
+            {
+                case AnimationState.Crawling:
+                case AnimationState.Climbing:
+                case AnimationState.Blocking:
+                    break;
+                default:
+                    var targetState = Time.time - _activityTime > 5 ? AnimationState.Idle : AnimationState.Ready;
+
+                    if (state != targetState)
+                    {
+                        Character.SetState(targetState);
+                    }
+
+                    break;
+            }
+        }
+    }
+    else
+    {
+        if (!_isWallJumping)
+        {
+            CheckForWall();
+        }
+
+        _motion = new Vector3(RunSpeed * _inputX, _motion.y);
+        Character.SetState(AnimationState.Jumping);
+    }
+
+    _motion.y += Gravity;
+
+    // Debug log for vertical motion (gravity or jumping)
+    Debug.Log($"Vertical speed: {_motion.y}");
+
+    Controller.Move(_motion * Time.fixedDeltaTime);
+
+    Character.Animator.SetBool("Grounded", Controller.isGrounded);
+    Character.Animator.SetBool("Moving", Controller.isGrounded && _inputX != 0);
+    Character.Animator.SetBool("Falling", !Controller.isGrounded && Controller.velocity.y < 0);
+
+    if (_inputX != 0 || _inputY != 0 || Character.Animator.GetBool("Action"))
+    {
+        _activityTime = Time.time;
+    }
+
+    _inputX = _inputY = 0;
+
+    if (Controller.isGrounded && !Mathf.Approximately(Controller.velocity.x, 0))
+    {
+        var velocity = MoveDust.velocityOverLifetime;
+
+        velocity.xMultiplier = 0.2f * -Mathf.Sign(Controller.velocity.x);
+
+        if (!MoveDust.isPlaying)
+        {
+            MoveDust.Play();
+        }
+    }
+    else
+    {
+        MoveDust.Stop();
+    }
+}
+
 
         private void Turn(int direction)
         {
