@@ -9798,8 +9798,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectibleIndex: 12
   collectibleName: Baju Waringin Sungsang
-  collectibleDescription: Busur utama Rama untuk mengalahkan para Raksasa disetiap
-    pertarungannya.
+  collectibleDescription: Dalam beberapa versi wayang, Rama juga dikenal memiliki
+    Baju Waringin Sungsang, yang merupakan jubah atau baju pelindung sakti. Baju
+    ini memberikan perlindungan yang tak tertembus kepada Rama selama peperangan,
+    membuatnya kebal terhadap serangan fisik dan magis. Pusaka ini menggambarkan
+    perlindungan ilahi yang selalu menyertai Rama dalam perjalanannya menegakkan
+    kebenaran dan keadilan.
   collectibleImage: {fileID: 21300000, guid: 34e9c7c08c3a2934b86d804b7055b056, type: 3}
 --- !u!54 &271442765
 Rigidbody:
@@ -9890,7 +9894,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: aa0e71a9afaf35e4c9b0b38ea522cdd0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 34e9c7c08c3a2934b86d804b7055b056, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9910,7 +9914,7 @@ Transform:
   m_GameObject: {fileID: 271442763}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.99, y: -2.97, z: 0}
+  m_LocalPosition: {x: 74.93, y: -12.48, z: 0}
   m_LocalScale: {x: 2.3341, y: 2.8602357, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -41186,10 +41190,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f1503864d9fe6d47856f867d8e9a5a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectibleIndex: 13
-  collectibleName: Panah Pasopati
-  collectibleDescription: Busur utama Rama untuk mengalahkan para Raksasa disetiap
-    pertarungannya.
+  collectibleIndex: 14
+  collectibleName: 'Panah Naraca '
+  collectibleDescription: Pusaka lain yang dikenal dalam wayang adalah Panah Naraca,
+    yang juga disebut sebagai panah timbangan keadilan. Panah ini dapat menimbang
+    keadilan dan kebenaran dalam sebuah pertarungan. Panah Naraca menjadi simbol
+    bahwa Rama selalu bertindak dengan adil dalam peperangan, tidak sekadar menggunakan
+    kekuatannya tetapi juga mempertimbangkan nilai-nilai moral.
   collectibleImage: {fileID: 21300000, guid: 50e668fbfe90ed044b8d647adb17ed60, type: 3}
 --- !u!54 &1190594308
 Rigidbody:
@@ -41300,7 +41307,7 @@ Transform:
   m_GameObject: {fileID: 1190594306}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.07, y: -3.094, z: 0}
+  m_LocalPosition: {x: -0.06, y: -3.094, z: 0}
   m_LocalScale: {x: 2.3341, y: 2.8602357, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -47721,10 +47728,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f1503864d9fe6d47856f867d8e9a5a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectibleIndex: 11
-  collectibleName: 'Pusaka Vishnu Dhanush '
-  collectibleDescription: Busur utama Rama untuk mengalahkan para Raksasa disetiap
-    pertarungannya.
+  collectibleIndex: 13
+  collectibleName: 'Pusaka Vishnu Astra '
+  collectibleDescription: 'adalah senjata sakti yang diberikan oleh Dewa Wisnu sendiri,
+    senjata ini memiliki kekuatan ilahi yang sangat besar. Rama menggunakan Vishnu
+    Astra dalam beberapa pertempuran untuk mengalahkan musuh-musuh yang sangat kuat,
+    termasuk Ravana. '
   collectibleImage: {fileID: 21300000, guid: 9aef34d813638d1499e86d68ad7814f1, type: 3}
 --- !u!54 &1374055360
 Rigidbody:
@@ -47835,7 +47844,7 @@ Transform:
   m_GameObject: {fileID: 1374055358}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.51, y: -3.32, z: 0}
+  m_LocalPosition: {x: 226.35, y: -12.65, z: 0}
   m_LocalScale: {x: 2.3341, y: 2.8602357, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -64868,8 +64877,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectibleIndex: 10
   collectibleName: Panah Garudastra
-  collectibleDescription: Pusaka ini merupakan tali yang dimiliki oleh Dewa Naga
-    untuk mengikat musuh dalam lingkaran yang kuat.
+  collectibleDescription: Garudastra adalah panah yang diberkahi dengan kekuatan
+    Garuda, burung raksasa yang merupakan musuh alami dari ular. Senjata ini digunakan
+    oleh Rama untuk melawan musuh-musuh yang menggunakan pusaka Naga Pasha atau serangan
+    berbasis ular.
   collectibleImage: {fileID: 21300000, guid: 50e668fbfe90ed044b8d647adb17ed60, type: 3}
 --- !u!54 &1890328101
 Rigidbody:
@@ -64980,7 +64991,7 @@ Transform:
   m_GameObject: {fileID: 1890328099}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.0200005, y: -3.1312, z: 0}
+  m_LocalPosition: {x: 21.01, y: -18.34, z: 0}
   m_LocalScale: {x: 2.3341, y: 2.8602357, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -67265,9 +67276,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f1503864d9fe6d47856f867d8e9a5a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectibleIndex: 14
+  collectibleIndex: 11
   collectibleName: Panah Varunastra
-  collectibleDescription: 
+  collectibleDescription: Senjata ini dikendalikan oleh Dewa Varuna, dewa air, dan
+    digunakan untuk mengendalikan atau menghancurkan musuh dengan elemen air. Rama
+    menggunakan senjata ini dalam beberapa pertempuran untuk memadamkan api atau
+    menghentikan hujan senjata yang dikirim oleh musuhnya.
   collectibleImage: {fileID: 21300000, guid: 4386726357cbbf94f800c3d0bef5e63a, type: 3}
 --- !u!54 &1959954037
 Rigidbody:
@@ -67378,7 +67392,7 @@ Transform:
   m_GameObject: {fileID: 1959954035}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: -3.094, z: 0}
+  m_LocalPosition: {x: 174.23, y: -13.16, z: 0}
   m_LocalScale: {x: 2.3341, y: 2.8602357, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

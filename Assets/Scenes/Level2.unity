@@ -4804,7 +4804,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectibleIndex: 6
   collectibleName: Pusaka Naga Pasha
-  collectibleDescription: 
+  collectibleDescription: 'Pusaka ini merupakan tali yang dimiliki oleh Dewa Naga
+    untuk mengikat musuh dalam lingkaran yang kuat. '
   collectibleImage: {fileID: 21300000, guid: b0b3ea18d405b8f4fab01012bb08023a, type: 3}
 --- !u!54 &115191965
 Rigidbody:
@@ -4915,11 +4916,11 @@ Transform:
   m_GameObject: {fileID: 115191963}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.78, y: -0.5700002, z: 0}
+  m_LocalPosition: {x: 18.01, y: -0.2, z: 0.024219744}
   m_LocalScale: {x: 2.3341, y: 2.3072, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2025010866}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &118507428 stripped
 Transform:
@@ -8962,8 +8963,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectibleIndex: 9
   collectibleName: Panah Pasopati
-  collectibleDescription: Busur utama Rama untuk mengalahkan para Raksasa disetiap
-    pertarungannya.
+  collectibleDescription: Pasopati adalah pusaka panah sakti yang diberikan oleh
+    Dewa Siwa kepada Rama. Panah ini sangat kuat dan dikatakan dapat menghancurkan
+    musuh dalam sekali serang. Rama menggunakan Pasopati terutama dalam pertempurannya
+    melawan Rahwana (Ravana) untuk mengalahkannya. Panah Pasopati dianggap sebagai
+    salah satu senjata paling sakti di dunia pewayangan.
   collectibleImage: {fileID: 21300000, guid: 50e668fbfe90ed044b8d647adb17ed60, type: 3}
 --- !u!54 &211491344
 Rigidbody:
@@ -9074,11 +9078,11 @@ Transform:
   m_GameObject: {fileID: 211491342}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 30.85, y: -0.5700002, z: 0}
+  m_LocalPosition: {x: 176.71, y: 4.704, z: 0.024219744}
   m_LocalScale: {x: 2.3341, y: 2.3072, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2025010866}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &211930963
 GameObject:
@@ -22021,8 +22025,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectibleIndex: 7
   collectibleName: Panah Gandharvastra
-  collectibleDescription: Busur utama Rama untuk mengalahkan para Raksasa disetiap
-    pertarungannya.
+  collectibleDescription: Senjata ini dipengaruhi oleh Gandharva, makhluk surgawi
+    yang ahli dalam seni musik dan sihir. Gandharvastra digunakan untuk menciptakan
+    ilusi dan mengacaukan musuh dalam pertempuran
   collectibleImage: {fileID: 21300000, guid: aa0e71a9afaf35e4c9b0b38ea522cdd0, type: 3}
 --- !u!54 &492758744
 Rigidbody:
@@ -22133,11 +22138,11 @@ Transform:
   m_GameObject: {fileID: 492758742}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.77, y: -0.47, z: 0}
+  m_LocalPosition: {x: 59.71, y: 1.97, z: 0.024219744}
   m_LocalScale: {x: 2.3341, y: 2.3072, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2025010866}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &492986271
 GameObject:
@@ -53675,8 +53680,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectibleIndex: 8
   collectibleName: 'Pusaka Vishnu Dhanush '
-  collectibleDescription: Busur utama Rama untuk mengalahkan para Raksasa disetiap
-    pertarungannya.
+  collectibleDescription: Busur ini adalah salah satu pusaka suci yang digunakan
+    oleh Rama. Busur ini dikaitkan dengan Dewa Vishnu dan memiliki kekuatan luar
+    biasa. Rama menggunakannya dalam berbagai pertempuran melawan para rakshasa (raksasa)
+    dan musuh lainnya. Salah satu momen penting yang melibatkan busur ini adalah
+    ketika Rama memenangkan hati Sita dengan mematahkan busur tersebut dalam kompetisi
+    di Kerajaan Mithila.
   collectibleImage: {fileID: 21300000, guid: 9aef34d813638d1499e86d68ad7814f1, type: 3}
 --- !u!54 &1176892732
 Rigidbody:
@@ -53787,11 +53796,11 @@ Transform:
   m_GameObject: {fileID: 1176892730}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 27.92, y: -0.5700002, z: 0}
+  m_LocalPosition: {x: 99.16, y: -1.34, z: 0.024219744}
   m_LocalScale: {x: 2.3341, y: 2.3072, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2025010866}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1180561970
 GameObject:
@@ -54379,8 +54388,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectibleIndex: 5
   collectibleName: Panah Agneyastra
-  collectibleDescription: Pusaka ini merupakan tali yang dimiliki oleh Dewa Naga
-    untuk mengikat musuh dalam lingkaran yang kuat.
+  collectibleDescription: Agneyastra adalah senjata yang dikuasai oleh Dewa Agni
+    (dewa api) dan memiliki kekuatan untuk membakar apa saja di hadapannya.
   collectibleImage: {fileID: 21300000, guid: 5bc2e177a75437041a0c3e2d9210d913, type: 3}
 --- !u!54 &1183896857
 Rigidbody:
@@ -54491,11 +54500,11 @@ Transform:
   m_GameObject: {fileID: 1183896855}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.76, y: -0.6000004, z: 0}
+  m_LocalPosition: {x: -7.034263, y: -2.13, z: 0.024219744}
   m_LocalScale: {x: 2.3341, y: 2.3072, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2025010866}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1185154035 stripped
 Transform:
@@ -97357,6 +97366,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2025010865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2025010866}
+  m_Layer: 0
+  m_Name: Collectable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2025010866
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025010865}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.674263, y: -0.50760555, z: -0.024219744}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1183896860}
+  - {fileID: 115191968}
+  - {fileID: 492758747}
+  - {fileID: 1176892735}
+  - {fileID: 211491347}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2026318873 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2223876233287459690, guid: 221e46c4334a6854e997031a614114f8, type: 3}
@@ -102399,11 +102444,6 @@ SceneRoots:
   - {fileID: 749739352}
   - {fileID: 292327277}
   - {fileID: 1852271191}
-  - {fileID: 1176892735}
-  - {fileID: 115191968}
-  - {fileID: 492758747}
-  - {fileID: 211491347}
-  - {fileID: 1183896860}
   - {fileID: 1349156609}
   - {fileID: 767330315}
   - {fileID: 13624577}
@@ -102423,3 +102463,4 @@ SceneRoots:
   - {fileID: 1478850034}
   - {fileID: 1220940282}
   - {fileID: 798533322}
+  - {fileID: 2025010866}

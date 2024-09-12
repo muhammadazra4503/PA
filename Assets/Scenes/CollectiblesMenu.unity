@@ -732,7 +732,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: d671a31e705b2e54db2daae8ce99c1e4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -794,10 +794,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 445719561}
-        m_TargetAssemblyTypeName: CollectibleManager, Assembly-CSharp
-        m_MethodName: OnCollectibleButtonClick
-        m_Mode: 3
+      - m_Target: {fileID: 239881568}
+        m_TargetAssemblyTypeName: CollectibleButton, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -819,9 +819,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectibleIndex: 4
-  collectibleName: 
-  collectibleDescription: 
-  collectibleImage: {fileID: 0}
+  collectibleName: 'Tameng Kiai Surasa '
+  collectibleDescription: 'Tameng Kiai Surasa adalah perisai sakti yang digunakan
+    oleh Rama dalam beberapa versi pewayangan. Tameng ini memiliki kemampuan untuk
+    menahan serangan fisik dan magis, memberikan perlindungan ekstra dalam pertempuran.
+    Tameng ini jarang disebutkan dalam cerita utama '
+  collectibleImage: {fileID: 21300000, guid: d671a31e705b2e54db2daae8ce99c1e4, type: 3}
 --- !u!1 &262513985
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,7 +977,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 4386726357cbbf94f800c3d0bef5e63a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1036,10 +1039,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 445719561}
-        m_TargetAssemblyTypeName: CollectibleManager, Assembly-CSharp
-        m_MethodName: OnCollectibleButtonClick
-        m_Mode: 3
+      - m_Target: {fileID: 269861306}
+        m_TargetAssemblyTypeName: CollectibleButton, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1061,9 +1064,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectibleIndex: 11
-  collectibleName: 
-  collectibleDescription: 
-  collectibleImage: {fileID: 0}
+  collectibleName: 'Panah Varunastra '
+  collectibleDescription: 'Senjata ini dikendalikan oleh Dewa Varuna, dewa air, dan
+    digunakan untuk mengendalikan atau menghancurkan musuh dengan elemen air. Rama
+    menggunakan senjata ini dalam beberapa pertempuran untuk memadamkan api atau
+    menghentikan hujan senjata yang dikirim oleh musuhnya. '
+  collectibleImage: {fileID: 21300000, guid: 4386726357cbbf94f800c3d0bef5e63a, type: 3}
 --- !u!1 &285480755
 GameObject:
   m_ObjectHideFlags: 0
@@ -1424,7 +1430,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 50e668fbfe90ed044b8d647adb17ed60, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1486,10 +1492,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 445719561}
-        m_TargetAssemblyTypeName: CollectibleManager, Assembly-CSharp
-        m_MethodName: OnCollectibleButtonClick
-        m_Mode: 3
+      - m_Target: {fileID: 409184905}
+        m_TargetAssemblyTypeName: CollectibleButton, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1511,9 +1517,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectibleIndex: 10
-  collectibleName: 
-  collectibleDescription: 
-  collectibleImage: {fileID: 0}
+  collectibleName: 'Panah Garudastra '
+  collectibleDescription: 'Garudastra adalah panah yang diberkahi dengan kekuatan
+    Garuda, burung raksasa yang merupakan musuh alami dari ular. Senjata ini digunakan
+    oleh Rama untuk melawan musuh-musuh yang menggunakan pusaka Naga Pasha atau serangan
+    berbasis ular. '
+  collectibleImage: {fileID: 21300000, guid: 50e668fbfe90ed044b8d647adb17ed60, type: 3}
 --- !u!1 &414226434
 GameObject:
   m_ObjectHideFlags: 0
@@ -2099,7 +2108,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 21fa4b13978e97b41a2273a994bcc9d7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2161,10 +2170,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 445719561}
-        m_TargetAssemblyTypeName: CollectibleManager, Assembly-CSharp
-        m_MethodName: OnCollectibleButtonClick
-        m_Mode: 3
+      - m_Target: {fileID: 517180355}
+        m_TargetAssemblyTypeName: CollectibleButton, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2186,9 +2195,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectibleIndex: 2
-  collectibleName: 
-  collectibleDescription: 
-  collectibleImage: {fileID: 0}
+  collectibleName: 'Keris Kiai Jangkung '
+  collectibleDescription: 'Keris Yang menyimbolkan  simbol kekuasaan dan kebesaran
+    seorang raja. Keris Kiai Jangkung merupakan pusaka raja yang diwariskan turun-temurun
+    dalam kisah pewayangan, dan keberadaannya menandai keagungan dari seorang pemimpin
+    seperti Rama. '
+  collectibleImage: {fileID: 21300000, guid: 21fa4b13978e97b41a2273a994bcc9d7, type: 3}
 --- !u!1 &529958472
 GameObject:
   m_ObjectHideFlags: 0
@@ -2633,7 +2645,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 50e668fbfe90ed044b8d647adb17ed60, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2695,10 +2707,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 445719561}
-        m_TargetAssemblyTypeName: CollectibleManager, Assembly-CSharp
-        m_MethodName: OnCollectibleButtonClick
-        m_Mode: 3
+      - m_Target: {fileID: 835139369}
+        m_TargetAssemblyTypeName: CollectibleButton, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2720,9 +2732,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectibleIndex: 14
-  collectibleName: 
-  collectibleDescription: 
-  collectibleImage: {fileID: 0}
+  collectibleName: 'Panah Naraca  '
+  collectibleDescription: 'Pusaka lain yang dikenal dalam wayang adalah Panah Naraca,
+    yang juga disebut sebagai panah timbangan keadilan. Panah ini dapat menimbang
+    keadilan dan kebenaran dalam sebuah pertarungan. Panah Naraca menjadi simbol
+    bahwa Rama selalu bertindak dengan adil dalam peperangan, tidak sekadar menggunakan
+    kekuatannya tetapi juga mempertimbangkan nilai-nilai moral. '
+  collectibleImage: {fileID: 21300000, guid: 50e668fbfe90ed044b8d647adb17ed60, type: 3}
 --- !u!1 &903128016
 GameObject:
   m_ObjectHideFlags: 0
@@ -2934,7 +2950,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: f3b722458e625ce4c94baf683e822fc8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3022,8 +3038,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectibleIndex: 0
   collectibleName: Busur Kodanda
-  collectibleDescription: Testing 1
-  collectibleImage: {fileID: 7293598183456022363, guid: 1ddc9afd21fec77489b1248d18f31b68, type: 3}
+  collectibleDescription: 'Busur utama Rama untuk mengalahkan para Raksasa disetiap
+    pertarungannya. '
+  collectibleImage: {fileID: 21300000, guid: f3b722458e625ce4c94baf683e822fc8, type: 3}
 --- !u!1 &931750913
 GameObject:
   m_ObjectHideFlags: 0
@@ -3159,7 +3176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 50e668fbfe90ed044b8d647adb17ed60, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3221,10 +3238,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 445719561}
-        m_TargetAssemblyTypeName: CollectibleManager, Assembly-CSharp
-        m_MethodName: OnCollectibleButtonClick
-        m_Mode: 3
+      - m_Target: {fileID: 935216846}
+        m_TargetAssemblyTypeName: CollectibleButton, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3246,9 +3263,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectibleIndex: 9
-  collectibleName: 
-  collectibleDescription: 
-  collectibleImage: {fileID: 0}
+  collectibleName: 'Panah Pasopati '
+  collectibleDescription: 'Pasopati adalah pusaka panah sakti yang diberikan oleh
+    Dewa Siwa kepada Rama. Panah ini sangat kuat dan dikatakan dapat menghancurkan
+    musuh dalam sekali serang. Rama menggunakan Pasopati terutama dalam pertempurannya
+    melawan Rahwana (Ravana) untuk mengalahkannya. Panah Pasopati dianggap sebagai
+    salah satu senjata paling sakti di dunia pewayangan. '
+  collectibleImage: {fileID: 21300000, guid: 50e668fbfe90ed044b8d647adb17ed60, type: 3}
 --- !u!1 &936117512
 GameObject:
   m_ObjectHideFlags: 0
@@ -3518,7 +3539,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 47291fac90751d04bbcfa381d36a02e1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3580,10 +3601,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 445719561}
-        m_TargetAssemblyTypeName: CollectibleManager, Assembly-CSharp
-        m_MethodName: OnCollectibleButtonClick
-        m_Mode: 3
+      - m_Target: {fileID: 980432509}
+        m_TargetAssemblyTypeName: CollectibleButton, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3605,9 +3626,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectibleIndex: 3
-  collectibleName: 
-  collectibleDescription: 
-  collectibleImage: {fileID: 0}
+  collectibleName: 'Tombak Kiai Baruna '
+  collectibleDescription: 'Tombak yang memiliki kekuatan air (baruna). Tombak ini
+    diyakini mampu mengendalikan elemen air dan digunakan Rama dalam beberapa kesempatan
+    untuk menghadapi musuh-musuh yang sulit dikalahkan dengan panah. '
+  collectibleImage: {fileID: 21300000, guid: 47291fac90751d04bbcfa381d36a02e1, type: 3}
 --- !u!1 &1013024092
 GameObject:
   m_ObjectHideFlags: 0
@@ -4370,7 +4393,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 5bc2e177a75437041a0c3e2d9210d913, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4432,10 +4455,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 445719561}
-        m_TargetAssemblyTypeName: CollectibleManager, Assembly-CSharp
-        m_MethodName: UnlockCollectible
-        m_Mode: 3
+      - m_Target: {fileID: 1271240268}
+        m_TargetAssemblyTypeName: CollectibleButton, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4457,9 +4480,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectibleIndex: 5
-  collectibleName: 
-  collectibleDescription: 
-  collectibleImage: {fileID: 0}
+  collectibleName: 'Panah Agneyastra '
+  collectibleDescription: 'Agneyastra adalah senjata yang dikuasai oleh Dewa Agni
+    (dewa api) dan memiliki kekuatan untuk membakar apa saja di hadapannya. '
+  collectibleImage: {fileID: 21300000, guid: 5bc2e177a75437041a0c3e2d9210d913, type: 3}
 --- !u!1 &1313466591
 GameObject:
   m_ObjectHideFlags: 0
@@ -4595,7 +4619,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 9aef34d813638d1499e86d68ad7814f1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4657,10 +4681,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 445719561}
-        m_TargetAssemblyTypeName: CollectibleManager, Assembly-CSharp
-        m_MethodName: OnCollectibleButtonClick
-        m_Mode: 3
+      - m_Target: {fileID: 1345226026}
+        m_TargetAssemblyTypeName: CollectibleButton, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4682,9 +4706,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectibleIndex: 8
-  collectibleName: 
-  collectibleDescription: 
-  collectibleImage: {fileID: 0}
+  collectibleName: 'Pusaka Vishnu Dhanush  '
+  collectibleDescription: Busur ini adalah salah satu pusaka suci yang digunakan
+    oleh Rama. Busur ini dikaitkan dengan Dewa Vishnu dan memiliki kekuatan luar
+    biasa. Rama menggunakannya dalam berbagai pertempuran melawan para rakshasa (raksasa)
+    dan musuh lainnya. Salah satu momen penting yang melibatkan busur ini adalah
+    ketika Rama memenangkan hati Sita dengan mematahkan busur tersebut dalam kompetisi
+    di Kerajaan Mithila.
+  collectibleImage: {fileID: 21300000, guid: 9aef34d813638d1499e86d68ad7814f1, type: 3}
 --- !u!1 &1346463981
 GameObject:
   m_ObjectHideFlags: 0
@@ -4821,7 +4850,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: aa0e71a9afaf35e4c9b0b38ea522cdd0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4883,10 +4912,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 445719561}
-        m_TargetAssemblyTypeName: CollectibleManager, Assembly-CSharp
-        m_MethodName: OnCollectibleButtonClick
-        m_Mode: 3
+      - m_Target: {fileID: 1427907213}
+        m_TargetAssemblyTypeName: CollectibleButton, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4908,9 +4937,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectibleIndex: 7
-  collectibleName: 
-  collectibleDescription: 
-  collectibleImage: {fileID: 0}
+  collectibleName: 'Panah Gandharvastra '
+  collectibleDescription: 'Senjata ini dipengaruhi oleh Gandharva, makhluk surgawi
+    yang ahli dalam seni musik dan sihir. Gandharvastra digunakan untuk menciptakan
+    ilusi dan mengacaukan musuh dalam pertempuran '
+  collectibleImage: {fileID: 21300000, guid: aa0e71a9afaf35e4c9b0b38ea522cdd0, type: 3}
 --- !u!1 &1453356548
 GameObject:
   m_ObjectHideFlags: 0
@@ -5123,7 +5154,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 9aef34d813638d1499e86d68ad7814f1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5185,10 +5216,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 445719561}
-        m_TargetAssemblyTypeName: CollectibleManager, Assembly-CSharp
-        m_MethodName: OnCollectibleButtonClick
-        m_Mode: 3
+      - m_Target: {fileID: 1482777226}
+        m_TargetAssemblyTypeName: CollectibleButton, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5210,9 +5241,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectibleIndex: 13
-  collectibleName: 
-  collectibleDescription: 
-  collectibleImage: {fileID: 0}
+  collectibleName: 'Vishnu Astra '
+  collectibleDescription: 'adalah senjata sakti yang diberikan oleh Dewa Wisnu sendiri,
+    senjata ini memiliki kekuatan ilahi yang sangat besar. Rama menggunakan Vishnu
+    Astra dalam beberapa pertempuran untuk mengalahkan musuh-musuh yang sangat kuat,
+    termasuk Ravana.  '
+  collectibleImage: {fileID: 21300000, guid: 9aef34d813638d1499e86d68ad7814f1, type: 3}
 --- !u!1 &1496386680
 GameObject:
   m_ObjectHideFlags: 0
@@ -5611,7 +5645,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 9709b5a14d43b2c48a6ecb8b4ac5532d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5673,10 +5707,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 445719561}
-        m_TargetAssemblyTypeName: CollectibleManager, Assembly-CSharp
-        m_MethodName: OnCollectibleButtonClick
-        m_Mode: 3
+      - m_Target: {fileID: 1537085096}
+        m_TargetAssemblyTypeName: CollectibleButton, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5698,9 +5732,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectibleIndex: 1
-  collectibleName: 
-  collectibleDescription: 
-  collectibleImage: {fileID: 0}
+  collectibleName: Brahmastra
+  collectibleDescription: 'Merupakan anak panah yang memiliki tingkat kehancuran
+    yang bisa menghancurkan pegunungan yang ada. '
+  collectibleImage: {fileID: 21300000, guid: 9709b5a14d43b2c48a6ecb8b4ac5532d, type: 3}
 --- !u!1 &1546624530
 GameObject:
   m_ObjectHideFlags: 0
@@ -5761,7 +5796,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 34e9c7c08c3a2934b86d804b7055b056, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5823,10 +5858,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 445719561}
-        m_TargetAssemblyTypeName: CollectibleManager, Assembly-CSharp
-        m_MethodName: OnCollectibleButtonClick
-        m_Mode: 3
+      - m_Target: {fileID: 1546624535}
+        m_TargetAssemblyTypeName: CollectibleButton, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5848,9 +5883,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectibleIndex: 12
-  collectibleName: 
-  collectibleDescription: 
-  collectibleImage: {fileID: 0}
+  collectibleName: 'Baju Waringin Sungsang '
+  collectibleDescription: 'Dalam beberapa versi wayang, Rama juga dikenal memiliki
+    Baju Waringin Sungsang, yang merupakan jubah atau baju pelindung sakti. Baju
+    ini memberikan perlindungan yang tak tertembus kepada Rama selama peperangan,
+    membuatnya kebal terhadap serangan fisik dan magis. Pusaka ini menggambarkan
+    perlindungan ilahi yang selalu menyertai Rama dalam perjalanannya menegakkan
+    kebenaran dan keadilan. '
+  collectibleImage: {fileID: 21300000, guid: 34e9c7c08c3a2934b86d804b7055b056, type: 3}
 --- !u!1 &1616170616
 GameObject:
   m_ObjectHideFlags: 0
@@ -6623,7 +6663,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: b0b3ea18d405b8f4fab01012bb08023a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6685,10 +6725,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 445719561}
-        m_TargetAssemblyTypeName: CollectibleManager, Assembly-CSharp
-        m_MethodName: OnCollectibleButtonClick
-        m_Mode: 3
+      - m_Target: {fileID: 1807375912}
+        m_TargetAssemblyTypeName: CollectibleButton, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6710,9 +6750,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectibleIndex: 6
-  collectibleName: 
-  collectibleDescription: 
-  collectibleImage: {fileID: 0}
+  collectibleName: 'Pusaka Naga Pasha '
+  collectibleDescription: 'Pusaka ini merupakan tali yang dimiliki oleh Dewa Naga
+    untuk mengikat musuh dalam lingkaran yang kuat.  '
+  collectibleImage: {fileID: 21300000, guid: b0b3ea18d405b8f4fab01012bb08023a, type: 3}
 --- !u!1 &1869106201
 GameObject:
   m_ObjectHideFlags: 0
