@@ -684,6 +684,7 @@ GameObject:
   - component: {fileID: 239881566}
   - component: {fileID: 239881565}
   - component: {fileID: 239881567}
+  - component: {fileID: 239881568}
   m_Layer: 5
   m_Name: Collectible 5
   m_TagString: Untagged
@@ -805,6 +806,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &239881568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239881563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f735b7c8b52ea45aa951ab0680a88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectibleIndex: 4
+  collectibleName: 
+  collectibleDescription: 
+  collectibleImage: {fileID: 0}
 --- !u!1 &262513985
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,6 +926,7 @@ GameObject:
   - component: {fileID: 269861304}
   - component: {fileID: 269861303}
   - component: {fileID: 269861305}
+  - component: {fileID: 269861306}
   m_Layer: 5
   m_Name: Collectible 12
   m_TagString: Untagged
@@ -1030,6 +1048,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &269861306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269861301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f735b7c8b52ea45aa951ab0680a88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectibleIndex: 0
+  collectibleName: 
+  collectibleDescription: 
+  collectibleImage: {fileID: 0}
 --- !u!1 &285480755
 GameObject:
   m_ObjectHideFlags: 0
@@ -1342,6 +1376,7 @@ GameObject:
   - component: {fileID: 409184903}
   - component: {fileID: 409184902}
   - component: {fileID: 409184904}
+  - component: {fileID: 409184905}
   m_Layer: 5
   m_Name: Collectible 11
   m_TagString: Untagged
@@ -1463,6 +1498,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &409184905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409184900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f735b7c8b52ea45aa951ab0680a88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectibleIndex: 0
+  collectibleName: 
+  collectibleDescription: 
+  collectibleImage: {fileID: 0}
 --- !u!1 &414226434
 GameObject:
   m_ObjectHideFlags: 0
@@ -2000,6 +2051,7 @@ GameObject:
   - component: {fileID: 517180353}
   - component: {fileID: 517180352}
   - component: {fileID: 517180354}
+  - component: {fileID: 517180355}
   m_Layer: 5
   m_Name: Collectible 3
   m_TagString: Untagged
@@ -2121,6 +2173,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &517180355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517180350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f735b7c8b52ea45aa951ab0680a88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectibleIndex: 2
+  collectibleName: 
+  collectibleDescription: 
+  collectibleImage: {fileID: 0}
 --- !u!1 &529958472
 GameObject:
   m_ObjectHideFlags: 0
@@ -2517,6 +2585,7 @@ GameObject:
   - component: {fileID: 835139367}
   - component: {fileID: 835139366}
   - component: {fileID: 835139368}
+  - component: {fileID: 835139369}
   m_Layer: 5
   m_Name: Collectible 15
   m_TagString: Untagged
@@ -2638,6 +2707,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &835139369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835139364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f735b7c8b52ea45aa951ab0680a88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectibleIndex: 0
+  collectibleName: 
+  collectibleDescription: 
+  collectibleImage: {fileID: 0}
 --- !u!1 &903128016
 GameObject:
   m_ObjectHideFlags: 0
@@ -3026,6 +3111,7 @@ GameObject:
   - component: {fileID: 935216844}
   - component: {fileID: 935216843}
   - component: {fileID: 935216845}
+  - component: {fileID: 935216846}
   m_Layer: 5
   m_Name: Collectible 10
   m_TagString: Untagged
@@ -3147,6 +3233,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &935216846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935216841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f735b7c8b52ea45aa951ab0680a88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectibleIndex: 9
+  collectibleName: 
+  collectibleDescription: 
+  collectibleImage: {fileID: 0}
 --- !u!1 &936117512
 GameObject:
   m_ObjectHideFlags: 0
@@ -3368,6 +3470,7 @@ GameObject:
   - component: {fileID: 980432507}
   - component: {fileID: 980432506}
   - component: {fileID: 980432508}
+  - component: {fileID: 980432509}
   m_Layer: 5
   m_Name: Collectible 4
   m_TagString: Untagged
@@ -3489,6 +3592,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &980432509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980432504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f735b7c8b52ea45aa951ab0680a88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectibleIndex: 3
+  collectibleName: 
+  collectibleDescription: 
+  collectibleImage: {fileID: 0}
 --- !u!1 &1013024092
 GameObject:
   m_ObjectHideFlags: 0
@@ -4203,6 +4322,7 @@ GameObject:
   - component: {fileID: 1271240266}
   - component: {fileID: 1271240265}
   - component: {fileID: 1271240267}
+  - component: {fileID: 1271240268}
   m_Layer: 5
   m_Name: Collectible 6
   m_TagString: Untagged
@@ -4314,7 +4434,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 445719561}
         m_TargetAssemblyTypeName: CollectibleManager, Assembly-CSharp
-        m_MethodName: OnCollectibleButtonClick
+        m_MethodName: UnlockCollectible
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4324,6 +4444,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1271240268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271240263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f735b7c8b52ea45aa951ab0680a88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectibleIndex: 5
+  collectibleName: 
+  collectibleDescription: 
+  collectibleImage: {fileID: 0}
 --- !u!1 &1313466591
 GameObject:
   m_ObjectHideFlags: 0
@@ -4411,6 +4547,7 @@ GameObject:
   - component: {fileID: 1345226024}
   - component: {fileID: 1345226023}
   - component: {fileID: 1345226025}
+  - component: {fileID: 1345226026}
   m_Layer: 5
   m_Name: Collectible 9
   m_TagString: Untagged
@@ -4532,6 +4669,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1345226026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345226021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f735b7c8b52ea45aa951ab0680a88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectibleIndex: 8
+  collectibleName: 
+  collectibleDescription: 
+  collectibleImage: {fileID: 0}
 --- !u!1 &1346463981
 GameObject:
   m_ObjectHideFlags: 0
@@ -4620,6 +4773,7 @@ GameObject:
   - component: {fileID: 1427907211}
   - component: {fileID: 1427907210}
   - component: {fileID: 1427907212}
+  - component: {fileID: 1427907213}
   m_Layer: 5
   m_Name: Collectible 8
   m_TagString: Untagged
@@ -4741,6 +4895,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1427907213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427907208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f735b7c8b52ea45aa951ab0680a88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectibleIndex: 7
+  collectibleName: 
+  collectibleDescription: 
+  collectibleImage: {fileID: 0}
 --- !u!1 &1453356548
 GameObject:
   m_ObjectHideFlags: 0
@@ -4905,6 +5075,7 @@ GameObject:
   - component: {fileID: 1482777224}
   - component: {fileID: 1482777223}
   - component: {fileID: 1482777225}
+  - component: {fileID: 1482777226}
   m_Layer: 5
   m_Name: Collectible 14
   m_TagString: Untagged
@@ -5026,6 +5197,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1482777226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482777221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f735b7c8b52ea45aa951ab0680a88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectibleIndex: 0
+  collectibleName: 
+  collectibleDescription: 
+  collectibleImage: {fileID: 0}
 --- !u!1 &1496386680
 GameObject:
   m_ObjectHideFlags: 0
@@ -5376,6 +5563,7 @@ GameObject:
   - component: {fileID: 1537085094}
   - component: {fileID: 1537085093}
   - component: {fileID: 1537085095}
+  - component: {fileID: 1537085096}
   m_Layer: 5
   m_Name: Collectible 2
   m_TagString: Untagged
@@ -5497,6 +5685,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1537085096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537085091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f735b7c8b52ea45aa951ab0680a88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectibleIndex: 1
+  collectibleName: 
+  collectibleDescription: 
+  collectibleImage: {fileID: 0}
 --- !u!1 &1546624530
 GameObject:
   m_ObjectHideFlags: 0
@@ -5509,6 +5713,7 @@ GameObject:
   - component: {fileID: 1546624533}
   - component: {fileID: 1546624532}
   - component: {fileID: 1546624534}
+  - component: {fileID: 1546624535}
   m_Layer: 5
   m_Name: Collectible 13
   m_TagString: Untagged
@@ -5630,6 +5835,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1546624535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546624530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f735b7c8b52ea45aa951ab0680a88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectibleIndex: 0
+  collectibleName: 
+  collectibleDescription: 
+  collectibleImage: {fileID: 0}
 --- !u!1 &1616170616
 GameObject:
   m_ObjectHideFlags: 0
@@ -6354,6 +6575,7 @@ GameObject:
   - component: {fileID: 1807375910}
   - component: {fileID: 1807375909}
   - component: {fileID: 1807375911}
+  - component: {fileID: 1807375912}
   m_Layer: 5
   m_Name: Collectible 7
   m_TagString: Untagged
@@ -6475,6 +6697,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1807375912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807375907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f735b7c8b52ea45aa951ab0680a88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectibleIndex: 6
+  collectibleName: 
+  collectibleDescription: 
+  collectibleImage: {fileID: 0}
 --- !u!1 &1869106201
 GameObject:
   m_ObjectHideFlags: 0
