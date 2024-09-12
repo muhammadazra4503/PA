@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: d3e329a076eb8664bae429454910bfef
+  - enabled: 1
+    path: Assets/Scenes/StageMenu.unity
+    guid: ec9ba610a646cd14091d8007403ae413
+  - enabled: 1
+    path: Assets/Scenes/CollectiblesMenu.unity
+    guid: dce4767817d51024896fadb992ad15c0
+  - enabled: 1
+    path: Assets/Scenes/OptionMenu.unity
+    guid: 45d8dc3ab72a25b44a921bdc4357c6b9
+  - enabled: 1
+    path: Assets/Scenes/Credit.unity
+    guid: 7dc07e362ffe40f44a1412edd93e7d84
+  - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 728b81cb38ec3bd4ea5dfcc578097be6
   - enabled: 1
@@ -26,19 +41,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level5.unity
     guid: 51b8984284bab83438ad0ec57ba2a538
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: d3e329a076eb8664bae429454910bfef
-  - enabled: 1
-    path: Assets/Scenes/StageMenu.unity
-    guid: ec9ba610a646cd14091d8007403ae413
-  - enabled: 1
-    path: Assets/Scenes/CollectibleMenu.unity
-    guid: dce4767817d51024896fadb992ad15c0
-  - enabled: 1
-    path: Assets/Scenes/OptionMenu.unity
-    guid: 45d8dc3ab72a25b44a921bdc4357c6b9
-  - enabled: 1
-    path: Assets/Scenes/Credit.unity
-    guid: 7dc07e362ffe40f44a1412edd93e7d84
   m_configObjects: {}

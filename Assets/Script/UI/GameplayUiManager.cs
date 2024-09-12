@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 {
     public GameObject gameOverPanel;
     public GameObject pausePanel;
+    public GameObject optionMenu;
 
     private bool isPaused = false;
 
@@ -14,16 +15,25 @@ public class UIManager : MonoBehaviour
     {
         gameOverPanel.SetActive(false);
         pausePanel.SetActive(false);
+        optionMenu.SetActive(false); // Ensure OptionMenu is hidden at start
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isPaused)
+            if (isPaused && optionMenu.activeSelf)
+            {
+                CloseOptionMenu(); // Close OptionMenu and return to PauseMenu
+            }
+            else if (isPaused)
+            {
                 ResumeGame();
+            }
             else
+            {
                 PauseGame();
+            }
         }
     }
 
@@ -55,7 +65,23 @@ public class UIManager : MonoBehaviour
     public void ResumeGame()
     {
         pausePanel.SetActive(false);
+        optionMenu.SetActive(false); // Ensure OptionMenu is closed when resuming
         Time.timeScale = 1f; // Resume the game
         isPaused = false;
+    }
+
+    // Method to show Option Menu
+    public void OpenOptionMenu()
+    {
+        pausePanel.SetActive(false); // Hide PauseMenu
+        optionMenu.SetActive(true);  // Show OptionMenu
+        Time.timeScale = 0f; // Pause the game while OptionMenu is active
+    }
+
+    // Method to close Option Menu and return to Pause Menu
+    public void CloseOptionMenu()
+    {
+        optionMenu.SetActive(false); // Hide OptionMenu
+        pausePanel.SetActive(true);  // Show PauseMenu
     }
 }

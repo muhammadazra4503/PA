@@ -17,7 +17,7 @@ public class MainMenuUIManager : MonoBehaviour
     public void ShowOptionsMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("OptionsMenu"); // Load the options menu scene
+        SceneManager.LoadScene("OptionMenu"); // Load the options menu scene
     }
 
     // Show the collectibles scene
@@ -31,6 +31,12 @@ public class MainMenuUIManager : MonoBehaviour
     public void ShowCredits()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Credits"); // Load the credits scene
+        SceneManager.LoadScene("Credit"); // Load the credits scene
+    }
+
+    public void MainMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu"); // Load the main menu scene
     }
 }

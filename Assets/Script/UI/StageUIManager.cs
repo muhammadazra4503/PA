@@ -28,6 +28,8 @@ public class StageUIManager : MonoBehaviour
 
     public void LoadLevel(int levelIndex)
     {
+        AudioManager.Instance.StopMusic();
+
         SceneManager.LoadScene("Level" + levelIndex);
     }
 }
