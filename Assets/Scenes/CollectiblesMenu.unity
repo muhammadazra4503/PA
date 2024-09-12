@@ -1060,7 +1060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01f735b7c8b52ea45aa951ab0680a88b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectibleIndex: 0
+  collectibleIndex: 11
   collectibleName: 
   collectibleDescription: 
   collectibleImage: {fileID: 0}
@@ -1510,7 +1510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01f735b7c8b52ea45aa951ab0680a88b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectibleIndex: 0
+  collectibleIndex: 10
   collectibleName: 
   collectibleDescription: 
   collectibleImage: {fileID: 0}
@@ -2719,7 +2719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01f735b7c8b52ea45aa951ab0680a88b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectibleIndex: 0
+  collectibleIndex: 14
   collectibleName: 
   collectibleDescription: 
   collectibleImage: {fileID: 0}
@@ -5209,7 +5209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01f735b7c8b52ea45aa951ab0680a88b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectibleIndex: 0
+  collectibleIndex: 13
   collectibleName: 
   collectibleDescription: 
   collectibleImage: {fileID: 0}
@@ -5847,7 +5847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01f735b7c8b52ea45aa951ab0680a88b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectibleIndex: 0
+  collectibleIndex: 12
   collectibleName: 
   collectibleDescription: 
   collectibleImage: {fileID: 0}
