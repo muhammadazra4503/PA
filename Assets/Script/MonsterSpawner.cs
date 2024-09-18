@@ -5,26 +5,32 @@ using System.Collections.Generic;
 public class MonsterSpawner : MonoBehaviour
 {
     [System.Serializable]
+    public class SpawnTransform
+    {
+        public Transform transform;
+        public float spawnInterval; // Individual spawn interval for this transform
+    }
+
+    [System.Serializable]
     public class SpawnPoint
     {
-        public Transform[] spawnTransforms;
+        public SpawnTransform[] spawnTransforms; // Updated to use SpawnTransform
         public GameObject monsterPrefab;
     }
 
     [Header("Spawner Settings")]
     [SerializeField] private SpawnPoint[] spawnPoints;
-    [SerializeField] private float spawnInterval = 5.0f;
     [SerializeField] private float spawnDuration = 30.0f;
     [SerializeField] private float destroyCooldown = 5.0f;
-    [SerializeField] private List<GameObject> objectsToActivate; // Changed to a list
+    [SerializeField] private List<GameObject> objectsToActivate;
     [SerializeField] private TextMeshProUGUI cooldownText;
 
     private bool isSpawning = false;
     private bool isCooldown = false;
-    private float spawnTimer;
     private float durationTimer;
     private float cooldownTimer;
     private List<GameObject> spawnedMonsters = new List<GameObject>();
+    private Dictionary<SpawnTransform, float> spawnTimers = new Dictionary<SpawnTransform, float>();
 
     private void OnTriggerEnter(Collider other)
     {
@@ -45,21 +51,36 @@ public class MonsterSpawner : MonoBehaviour
     private void StartSpawning()
     {
         isSpawning = true;
-        spawnTimer = spawnInterval;
         durationTimer = spawnDuration;
+
+        // Initialize spawn timers for each spawn transform
+        foreach (SpawnPoint spawnPoint in spawnPoints)
+        {
+            foreach (SpawnTransform spawnTransform in spawnPoint.spawnTransforms)
+            {
+                spawnTimers[spawnTransform] = spawnTransform.spawnInterval; // Set the timer to the specified spawn interval
+            }
+        }
     }
 
     private void Update()
     {
         if (isSpawning)
         {
-            spawnTimer -= Time.deltaTime;
             durationTimer -= Time.deltaTime;
 
-            if (spawnTimer <= 0)
+            foreach (SpawnPoint spawnPoint in spawnPoints)
             {
-                SpawnMonsters();
-                spawnTimer = spawnInterval;
+                foreach (SpawnTransform spawnTransform in spawnPoint.spawnTransforms)
+                {
+                    spawnTimers[spawnTransform] -= Time.deltaTime;
+
+                    if (spawnTimers[spawnTransform] <= 0)
+                    {
+                        SpawnMonster(spawnPoint, spawnTransform);
+                        spawnTimers[spawnTransform] = spawnTransform.spawnInterval; // Reset the timer
+                    }
+                }
             }
 
             if (durationTimer <= 0 && !isCooldown)
@@ -81,7 +102,7 @@ public class MonsterSpawner : MonoBehaviour
             {
                 DestroyAllSpawnedMonsters();
                 isCooldown = false;
-                ActivateObjects(); // Modified to call the new method
+                ActivateObjects();
 
                 if (cooldownText != null)
                 {
@@ -91,27 +112,18 @@ public class MonsterSpawner : MonoBehaviour
         }
     }
 
-    private void SpawnMonsters()
+    private void SpawnMonster(SpawnPoint spawnPoint, SpawnTransform spawnTransform)
     {
-        foreach (SpawnPoint spawnPoint in spawnPoints)
+        GameObject spawnedMonster = Instantiate(spawnPoint.monsterPrefab, spawnTransform.transform.position, spawnTransform.transform.rotation);
+
+        // Enable movement on the spawned monster
+        EnemyPatrol enemyPatrol = spawnedMonster.GetComponent<EnemyPatrol>();
+        if (enemyPatrol != null)
         {
-            if (spawnPoint.spawnTransforms.Length > 0)
-            {
-                int randomIndex = Random.Range(0, spawnPoint.spawnTransforms.Length);
-                Transform chosenTransform = spawnPoint.spawnTransforms[randomIndex];
-
-                GameObject spawnedMonster = Instantiate(spawnPoint.monsterPrefab, chosenTransform.position, chosenTransform.rotation);
-
-                // Enable movement on the spawned monster
-                EnemyPatrol enemyPatrol = spawnedMonster.GetComponent<EnemyPatrol>();
-                if (enemyPatrol != null)
-                {
-                    enemyPatrol.canMove = true;
-                }
-
-                spawnedMonsters.Add(spawnedMonster);
-            }
+            enemyPatrol.canMove = true;
         }
+
+        spawnedMonsters.Add(spawnedMonster);
     }
 
     private void StartCooldown()
@@ -132,7 +144,7 @@ public class MonsterSpawner : MonoBehaviour
         spawnedMonsters.Clear();
     }
 
-    private void ActivateObjects() // Renamed and modified this method
+    private void ActivateObjects()
     {
         foreach (GameObject obj in objectsToActivate)
         {
