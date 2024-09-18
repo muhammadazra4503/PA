@@ -953,7 +953,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2763e8de08f8f234996cbfdf238670f2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e70e322c9dc8b9a4896adef287995fbc, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3341,6 +3341,8 @@ MonoBehaviour:
   gameOverPanel: {fileID: 1382203316}
   pausePanel: {fileID: 391548552}
   optionMenu: {fileID: 1187279425}
+  finishUIPanel: {fileID: 0}
+  finishUIManager: {fileID: 0}
 --- !u!4 &701618348
 Transform:
   m_ObjectHideFlags: 0
@@ -9944,7 +9946,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2763e8de08f8f234996cbfdf238670f2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e70e322c9dc8b9a4896adef287995fbc, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10300,7 +10302,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2763e8de08f8f234996cbfdf238670f2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e70e322c9dc8b9a4896adef287995fbc, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
