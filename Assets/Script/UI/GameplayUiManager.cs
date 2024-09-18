@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
     public GameObject gameOverPanel;
     public GameObject pausePanel;
     public GameObject optionMenu;
+    public GameObject finishUIPanel; // New: Add the Finish UI Panel
+    public FinishUIManager finishUIManager; // New: Reference to the Finish UI Manager
 
     private bool isPaused = false;
 
@@ -15,7 +17,8 @@ public class UIManager : MonoBehaviour
     {
         gameOverPanel.SetActive(false);
         pausePanel.SetActive(false);
-        optionMenu.SetActive(false); // Ensure OptionMenu is hidden at start
+        optionMenu.SetActive(false); 
+        finishUIPanel.SetActive(false);
     }
 
     void Update()
@@ -83,5 +86,15 @@ public class UIManager : MonoBehaviour
     {
         optionMenu.SetActive(false); // Hide OptionMenu
         pausePanel.SetActive(true);  // Show PauseMenu
+    }
+
+    // Method to show the Finish UI when the stage is complete
+    public void ShowFinishUI()
+    {
+        Time.timeScale = 0f; // Pause the game when the finish UI is shown
+        finishUIPanel.SetActive(true);
+
+        // Call FinishUIManager to display the collected items
+        finishUIManager.DisplayCollectedItemsAtFinish();
     }
 }

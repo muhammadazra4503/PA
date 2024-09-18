@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class CollectibleManager : MonoBehaviour
 {
+    public static List<Sprite> collectedItems = new List<Sprite>();
+
     public GameObject[] collectibleButtons;
     public GameObject[] lockedImages;
     public TMP_Text nameObject;
@@ -44,6 +46,8 @@ public class CollectibleManager : MonoBehaviour
         {
             OnCollectiblePicked.Invoke(index, name, description, image);
         }
+
+        collectedItems.Add(image);
     }
 
     public void UpdateDetailView(int index, string name, string description, Sprite image)
