@@ -513,7 +513,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000022888, y: 8.3039}
+  m_AnchoredPosition: {x: 0.000022888, y: 40}
   m_SizeDelta: {x: 1472.7493, y: 799.3923}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1323467780
@@ -536,11 +536,26 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur augue
-    nibh, congue interdum ipsum ac, bibendum condimentum arcu. Fusce pulvinar semper
-    leo, at dictum libero aliquet sed. Morbi risus augue, rhoncus eget tempus nec,
-    rutrum auctor lorem.\n\nVivamus sed ultrices tellus. Integer non accumsan ex.
-    In fringilla odio at turpis vulputate, in ullamcorper dui finibus. \n"
+  m_text: 'Asset Used
+
+
+    Pixel Adventure 1 - Unity Asset Store
+
+    Pixel Fantasy
+    - Unity Asset Store
+
+    All Sprite Collectible - Itch.io
+
+
+
+    Sound Used
+
+
+    RPG
+    Title Screen Music Pack - opengameart.org
+
+    SFX and Theme - Free Commercial
+    Use on Youtube'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c451df37d24490048959059d3aca612f, type: 2}
   m_sharedMaterial: {fileID: 4857907355803454694, guid: c451df37d24490048959059d3aca612f, type: 2}

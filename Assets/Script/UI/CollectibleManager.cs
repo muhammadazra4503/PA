@@ -8,28 +8,59 @@ public class CollectibleManager : MonoBehaviour
 {
     public static List<Sprite> collectedItems = new List<Sprite>();
 
-    public GameObject[] collectibleButtons;
-    public GameObject[] lockedImages;
-    public TMP_Text nameObject;
-    public TMP_Text descriptionObject;
-    public Image detailImage;
-    public GameObject detailImageLocked;
+    public GameObject[] collectibleButtons; // Array of collectible buttons in the UI
+    public GameObject[] lockedImages; // Array of locked images
+    public TMP_Text nameObject; // Reference to the NameObject (UI Text component)
+    public TMP_Text descriptionObject; // Reference to the DescriptionObject (UI Text component)
+    public Image detailImage; // Reference to the detail image (UI Image component)
+    public GameObject detailImageLocked; // The "locked" placeholder image
+    public GameObject collectibleDetailView; // The parent of the detail view to show/hide
 
     public static event System.Action<int, string, string, Sprite> OnCollectiblePicked;
 
     void Start()
     {
+        // Initially hide the detail view
+        collectibleDetailView.SetActive(false);
+
+        bool firstCollectibleSelected = false;
+
         // Load the status of each collectible
         for (int i = 0; i < collectibleButtons.Length; i++)
         {
-            if (PlayerPrefs.GetInt("Collectible_" + i, 0) == 1)
+            if (PlayerPrefs.GetInt("Collectible_" + i, 0) == 1) // Check if the collectible is unlocked
             {
                 UnlockCollectible(i);
+
+                // Auto-select the first unlocked collectible
+                if (!firstCollectibleSelected)
+                {
+                    // Grab the collectible's data
+                    Button button = collectibleButtons[i].GetComponent<Button>();
+                    CollectibleInGame collectibleData = button.GetComponent<CollectibleInGame>();
+
+                    if (collectibleData != null)
+                    {
+                        // Update the detail view with the first unlocked collectible's data
+                        UpdateDetailView(collectibleData.collectibleIndex, collectibleData.collectibleName, collectibleData.collectibleDescription, collectibleData.collectibleImage);
+
+                        // Show the collectible detail view
+                        collectibleDetailView.SetActive(true);
+
+                        firstCollectibleSelected = true;
+                    }
+                }
             }
             else
             {
                 LockCollectible(i);
             }
+        }
+
+        // If no collectible is unlocked, keep the detail view hidden
+        if (!firstCollectibleSelected)
+        {
+            collectibleDetailView.SetActive(false);
         }
 
         OnCollectiblePicked += UpdateDetailView;
@@ -57,10 +88,14 @@ public class CollectibleManager : MonoBehaviour
         descriptionObject.text = description;
         detailImage.sprite = image;
 
+        // Hide the locked image if necessary
         if (detailImageLocked != null)
         {
             detailImageLocked.SetActive(false);
         }
+
+        // Ensure the detail view is visible when updating it
+        collectibleDetailView.SetActive(true);
     }
 
     public void UnlockCollectible(int index)
@@ -85,6 +120,8 @@ public class CollectibleManager : MonoBehaviour
         }
     }
 }
+
+
 
 
 

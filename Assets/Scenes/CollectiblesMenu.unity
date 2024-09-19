@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Name
+  m_text: Nama Koleksi
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c451df37d24490048959059d3aca612f, type: 2}
   m_sharedMaterial: {fileID: 4857907355803454694, guid: c451df37d24490048959059d3aca612f, type: 2}
@@ -1808,6 +1808,7 @@ MonoBehaviour:
   descriptionObject: {fileID: 1013024094}
   detailImage: {fileID: 1925020597}
   detailImageLocked: {fileID: 1883900712}
+  collectibleDetailView: {fileID: 828292384}
 --- !u!114 &445719562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3402,7 +3403,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Collectible
+  m_text: Koleksi
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c451df37d24490048959059d3aca612f, type: 2}
   m_sharedMaterial: {fileID: 4857907355803454694, guid: c451df37d24490048959059d3aca612f, type: 2}
@@ -6032,7 +6033,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000026077, y: -482}
+  m_AnchoredPosition: {x: -375, y: -353}
   m_SizeDelta: {x: 311.56, y: 72.622}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1619325307
@@ -6111,7 +6112,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 126f1537c4b454546a00f2eb974c5cfd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6e12c380fd060954cb8d998f80a55cb4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6526,7 +6527,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Description:'
+  m_text: 'Deskripsi:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c451df37d24490048959059d3aca612f, type: 2}
   m_sharedMaterial: {fileID: 4857907355803454694, guid: c451df37d24490048959059d3aca612f, type: 2}

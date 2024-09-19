@@ -7,9 +7,11 @@ using System.Collections;
 public class AutoScroll : MonoBehaviour
 {
     public ScrollRect scrollRect;
-    public float scrollSpeed = 0.1f; // Adjust the speed as needed
-    public float startDelay = 1f;    // Delay before starting auto-scroll
-    public GameObject storyPanel;    // Reference to the StoryPanel
+    public float scrollSpeed = 0.1f; 
+    public float startDelay = 1f;    
+    public GameObject storyPanel;
+    public string bgmName;
+    public string gameplayBGM;
     private bool isUserScrolling = false;
     private bool scrollComplete = false;
 
@@ -21,6 +23,12 @@ public class AutoScroll : MonoBehaviour
         // Pause the game and show the StoryPanel
         Time.timeScale = 0f;
         storyPanel.SetActive(true);
+
+        // Start playing the specified BGM when the story starts
+        if (!string.IsNullOrEmpty(bgmName))
+        {
+            AudioManager.Instance.PlayMusic(bgmName);
+        }
 
         // Start the coroutine to initialize and start auto-scrolling
         StartCoroutine(StartAutoScrollAfterDelay(startDelay));
@@ -55,9 +63,13 @@ public class AutoScroll : MonoBehaviour
         // Optionally wait a moment before closing the story panel
         yield return new WaitForSecondsRealtime(1f); // Adjust the wait time as needed
 
+        // Stop the current BGM when the story ends
+        AudioManager.Instance.StopMusic();
+
         // Close the StoryPanel and resume the game
         storyPanel.SetActive(false);
         Time.timeScale = 1f;  // Resume the game
+        AudioManager.Instance.PlayMusic(gameplayBGM);
     }
 
     // Detect if the user is scrolling manually

@@ -15119,6 +15119,8 @@ MonoBehaviour:
   scrollSpeed: 0.01
   startDelay: 1
   storyPanel: {fileID: 1715503511}
+  bgmName: StoryBGM2
+  gameplayBGM: GameplayBGM2
 --- !u!114 &326976512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27515,8 +27517,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 259683841}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.8820091}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -28369,7 +28371,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 580068394}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.11799091
+  m_Size: 0.11799093
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -30537,9 +30539,9 @@ RectTransform:
   m_Father: {fileID: 326976510}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &645127083
 MonoBehaviour:
@@ -39967,7 +39969,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 836169973}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 701618347}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: MainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &836169973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52716,9 +52730,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2061858948}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 909.35754, y: -3483.1582}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1677.7451, y: 7566.3164}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1106030333
@@ -65461,8 +65475,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a285b6d6604e53f4a9d8b20d617529cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Level2
-  currentLevelIndex: 1
+  sceneName: Level3
+  currentLevelIndex: 2
 --- !u!1 &1345685013
 GameObject:
   m_ObjectHideFlags: 0
@@ -84103,7 +84117,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1715503512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104145,7 +104159,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -0.000061035156}
-  m_SizeDelta: {x: 0, y: 6408.957}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2061858949
 MonoBehaviour:

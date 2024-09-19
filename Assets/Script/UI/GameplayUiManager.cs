@@ -97,4 +97,16 @@ public class UIManager : MonoBehaviour
         // Call FinishUIManager to display the collected items
         finishUIManager.DisplayCollectedItemsAtFinish();
     }
+
+    public void ExitGame()
+    {
+        // Check if we are running in the Unity editor
+        #if UNITY_EDITOR
+        // If in the editor, stop playing the scene
+        UnityEditor.EditorApplication.isPlaying = false;
+        #else
+        // If not in the editor, quit the application
+        Application.Quit();
+        #endif
+    }
 }

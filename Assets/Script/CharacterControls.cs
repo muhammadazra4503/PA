@@ -86,6 +86,7 @@ namespace Assets.PixelFantasy.PixelHeroes.Common.Scripts.ExampleScripts
                 lastAttackTime = Time.time;
                 Character.Animator.SetTrigger("Attack");
                 ShootProjectile();
+                AudioManager.Instance.PlaySFX("Shoot");
             }
 
             if (Input.GetKeyDown(KeyCode.J)) Character.Animator.SetTrigger("Jab");
@@ -128,7 +129,7 @@ namespace Assets.PixelFantasy.PixelHeroes.Common.Scripts.ExampleScripts
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 _inputY = 1;
-
+                AudioManager.Instance.PlaySFX("Jump");
                 if (Controller.isGrounded)
                 {
                     JumpDust.Play(true);
@@ -141,6 +142,7 @@ namespace Assets.PixelFantasy.PixelHeroes.Common.Scripts.ExampleScripts
                         _motion = new Vector3(WallJumpSpeed * _inputX, JumpSpeed);
                         _isOnWall = false;
                         Character.SetState(AnimationState.Jumping);
+                        AudioManager.Instance.PlaySFX("Jump");
                     }
                 }
             }
